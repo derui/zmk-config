@@ -17,13 +17,13 @@
 
 / {
   behaviors {
-      left_rot: sensor_rotate_kp {
+      left_rot: sensor_rotate_kp_left {
           compatible = "zmk,behavior-sensor-rotate-var";
           #sensor-binding-cells = <1>;
           bindings = <&kp>, <&kp>;
       };
 
-      right_rot: sensor_rotate_kp {
+      right_rot: sensor_rotate_kp_right {
           compatible = "zmk,behavior-sensor-rotate-var";
           #sensor-binding-cells = <2>;
           bindings = <&kp>, <&kp>;
