@@ -24,11 +24,11 @@ RC(2,5) RC(2,4) RC(2,3) RC(2,2) RC(2,1) RC(2,0)                   RC(2,6) RC(2,7
         rows = <4>;
         columns = <12>;
 
-        matrix {
+        matrix_left {
           kscan = <&kscan_left>;
         };
 
-        matrix {
+        matrix_right {
           kscan = <&kscan_right>;
           col-offset = <7>;
         }
