@@ -16,6 +16,20 @@
 #define ADJT 6
 
 / {
+  behaviors {
+      left_rot: sensor_rotate_kp {
+          compatible = "zmk,behavior-sensor-rotate-var";
+          #sensor-binding-cells = <1>;
+          bindings = <&kp>, <&kp>;
+      };
+
+      right_rot: sensor_rotate_kp {
+          compatible = "zmk,behavior-sensor-rotate-var";
+          #sensor-binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+      };
+  };
+  
   keymap {
     compatible = "zmk,keymap";
 
@@ -26,6 +40,8 @@
   &none         &none    &none    &none     &none    &none                     &none    &none    &none     &none   &none    &none
                                   &none     &none    &none                     &none    &none    &none
       >;
+
+        sensor-bindings = <&left_rot DOWN UP>, <&right_rot RIGHT LEFT>;
     };
 
     qwerty {
@@ -35,6 +51,7 @@
       &kp LSHFT &kp Z &kp X &kp C     &kp V    &kp B                          &kp N     &kp M    &kp COMMA &kp DOT &kp FSLH &kp LALT
                              &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
       >;
+      sensor-bindings = <&left_rot DOWN UP>, <&right_rot RIGHT LEFT>;
     };
 
     gallium {
@@ -44,6 +61,8 @@
       &kp LSHFT &kp X &kp Q &kp M     &kp W    &kp Z                          &kp K     &kp P    &kp SQT   &kp SEMI &kp DOT   &kp LALT
                              &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
       >;
+
+          sensor-bindings = <&left_rot DOWN UP>, <&right_rot RIGHT LEFT>;
     };
 
     lower {
@@ -53,6 +72,8 @@
   &trans    &kp F1    &kp F2   &kp F3   &kp F4   &kp F5           &kp F6   &kp F7   &kp F8 &kp F9    &kp F10
                                &trans   &trans   &trans           &trans   &trans   &trans
       >;
+
+          sensor-bindings = <&left_rot DOWN UP>, <&right_rot END HOME>;
     };
     raise {
       bindings = <
@@ -61,6 +82,8 @@
   &trans    &trans   &kp LBRC &kp QMARK &kp RBRC   &trans         &trans     &kp UNDER &kp PLUS  &kp TILDE &kp BSLH
                                  &trans &trans     &trans         &trans     &trans    &trans
       >;
+
+          sensor-bindings = <&left_rot PG_DN PG_UP>, <&right_rot RIGHT LEFT>;
     };
 
     adjust {
