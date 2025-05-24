@@ -19,7 +19,7 @@
   behaviors {
       left_rot: sensor_rotate_kp_left {
           compatible = "zmk,behavior-sensor-rotate-var";
-          #sensor-binding-cells = <1>;
+          #sensor-binding-cells = <2>;
           bindings = <&kp>, <&kp>;
       };
 
