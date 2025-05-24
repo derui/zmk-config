@@ -9,11 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define QWER 2
-#define GALI 3
-#define LOWR 4
-#define RAIS 5
-#define ADJT 6
+#define QWER 1
+#define GALI 2
+#define LOWR 3
+#define RAIS 4
+#define ADJT 5
 
 / {
   behaviors {
