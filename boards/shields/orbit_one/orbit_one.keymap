@@ -35,7 +35,7 @@
 
     default_layer {
       bindings = <
-  &lt ADJT ESC  &to GWER &to GALI &none     &none    &none                     &none    &none    &none     &none   &none    &none
+  &lt ADJT ESC  &to QWER &to GALI &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none         &none    &none    &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none         &none    &none    &none     &none    &none                     &none    &none    &none     &none   &none    &none
                                   &none     &none    &none                     &none    &none    &none
