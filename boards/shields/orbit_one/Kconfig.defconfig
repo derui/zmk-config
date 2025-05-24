@@ -10,13 +10,11 @@ config ZMK_POINTING
     default y
 config ZMK_POINTING_SMOOTH_SCROLLING
     default y
+
 config I2C
     default y
 
 config EC11
-  default y
-
-config EC11_TRIGGER_GLOBAL_THREAD
   default y
 
 endif
