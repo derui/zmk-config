@@ -1,0 +1,22 @@
+# Copyright (c) 2021-2025 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_ORBIT_ONE
+
+config ZMK_KEYBOARD_NAME
+    default "Orbit One"
+
+config ZMK_POINTING
+    default y
+config ZMK_POINTING_SMOOTH_SCROLLING
+    default y
+config I2C
+    default y
+
+config EC11
+  default y
+
+config EC11_TRIGGER_GLOBAL_THREAD
+  default y
+
+endif

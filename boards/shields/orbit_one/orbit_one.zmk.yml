@@ -1,0 +1,10 @@
+file_format: "1"
+id: orbit_one
+name: Orbit One
+type: shield
+url: https://github.com/derui/orbit-one
+requires: [pro_micro]
+features:
+  - keys
+  - pointer
+  - encoder
