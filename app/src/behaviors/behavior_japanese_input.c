@@ -21,10 +21,10 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 // data model of the japanese input
 struct behavior_japanese_input_definition {
   // resultと対応するキーコードのマッピング。releaseされたときに適用される
-  uint32_t mapping[];
+  uint32_t mapping[JAPANESE_INPUT_CAPTURE_SIZE];
 
   // 実際に押されるキーコードの一覧。0から順に送出される
-  uint32_t result_seq[];
+  uint32_t result_seq[JAPANESE_INPUT_CAPTURE_SIZE];
 };
 
 
@@ -81,148 +81,6 @@ struct behavior_japanese_input_definition {
 /*   NSI(COMM, "ri"), */
 /*   NSI(DOT, "xtu"), */
 /*   NSI(SLSH, "tu"), */
-
-/*   /\* シフト面の定義 *\/ */
-/*   /\* Q行 *\/ */
-/*   NM2(K, E, "re"), */
-/*   NM2(K, R, "ti"), */
-/*   NM2(D, U, "so"), */
-/*   NM2(D, I, "ne"), */
-/*   NM2(D, O, "nu"), */
-
-/*   /\* A行 *\/ */
-/*   NM2(K, A, "me"), */
-/*   NM2(K, S, "se"), */
-/*   NM2(K, D, SS_TAP(X_MINS)), */
-/*   NM2(K, F, "mu"), */
-/*   NM2(K, G, "mi"), */
-/*   NM2(D, H, "yu"), */
-/*   NM2(D, J, "wa"), */
-/*   /\* NM2(D, K, "mu"), *\/ */
-/*   NM2(D, L, "he"), */
-/*   NM2(D, SCLN, "ho"), */
-  
-/*   /\* Z行 *\/ */
-/*   NM2(K, Z, "e"), */
-/*   NM2(K, X, "ro"), */
-/*   NM2(K, C, "ke"), */
-/*   /\* NM2(K, V, SS_TAP(X_MINS)), *\/ */
-/*   NM2(K, B, "sa"), */
-/*   NM2(D, N, "hi"), */
-/*   NM2(D, M, "yo"), */
-/*   /\* NM2(D, COMM, "hu"), *\/ */
-/*   NM2(D, DOT, "hu"), */
-/*   NM2(D, SLSH, "ya"), */
-
-/*   /\* 濁音 *\/ */
-/*   /\* あ行 *\/ */
-/*   NSI(Q, "vu"), */
-  
-/*   /\* か行 *\/ */
-/*   NM2(F, J, "ga"), */
-/*   NM2(F, I, "gi"), */
-/*   NM2(J, W, "gu"), */
-/*   NM2(J, C, "ge"), */
-/*   NM2(J, Z, "go"), */
-
-/*   /\* さ行 *\/ */
-/*   NM2(J, B, "za"), */
-/*   NM2(J, E, "zi"), */
-/*   NM2(F, O, "zu"), */
-/*   NM2(J, S, "ze"), */
-/*   NM2(F, U, "zo"), */
-
-/*   /\* た行 *\/ */
-/*   NM2(J, A, "da"), */
-/*   NM2(J, R, "di"), */
-/*   NM2(F, SLSH, "du"), */
-/*   NM2(J, G, "de"), */
-/*   NM2(J, V, "do"), */
-
-/*   /\* は行 *\/ */
-/*   NM2(J, X, "ba"), */
-/*   NM2(F, N, "bi"), */
-/*   NM2(F, DOT, "bu"), */
-/*   NM2(F, L, "be"), */
-/*   NM2(F, SCLN, "bo"), */
-
-/*   /\* 半濁音 *\/ */
-/*   /\* は行 *\/ */
-/*   NM2(M, X, "pa"), */
-/*   NM2(V, N, "pi"), */
-/*   NM2(V, DOT, "pu"), */
-/*   NM2(V, L, "pe"), */
-/*   NM2(V, SCLN, "po"), */
-  
-/*   /\* 小書き *\/ */
-/*   NM2(P, B, "xa"), */
-/*   NM2(Q, L, "xi"), */
-/*   NM2(P, S, "xu"), */
-/*   NM2(P, Z, "xe"), */
-/*   NM2(T, N, "xo"), */
-/*   NM2(Q, M, "xyo"), */
-/*   NM2(T, H, "xyu"), */
-/*   NM2(Q, SLSH, "xya"), */
-  
-/*   /\* 特殊 *\/ */
-/*   NM2(K, L, SS_TAP(X_DOT)), */
-/*   NM2(D, S, SS_TAP(X_COMM)), */
-/*   NM3(J, K, E, SS_TAP(X_SLSH)), */
-/*   NM3(J, K, D, "?"), */
-/*   NM3(J, K, C, "!"), */
-
-/*   /\* 拗音拡張 *\/ */
-/*   /\* 濁音 *\/ */
-/*   /\* か行 *\/ */
-/*   NM2(Q, I, "kya"), */
-/*   NM2(Z, I, "kyu"), */
-/*   NM2(A, I, "kyo"), */
-/*   NM3(F, Q, I, "gya"), */
-/*   NM3(F, Z, I, "gyu"), */
-/*   NM3(F, A, I, "gyo"), */
-
-/*   /\* さ行 *\/ */
-/*   NM2(P, E, "sya"), */
-/*   NM2(SLSH, E, "syu"), */
-/*   NM2(SCLN, E, "syo"), */
-/*   NM3(J, P, E, "zya"), */
-/*   NM3(J, SLSH, E, "zyu"), */
-/*   NM3(J, SCLN, E, "zyo"), */
-
-/*   /\* た行 *\/ */
-/*   NM2(P, R, "tya"), */
-/*   NM2(SLSH, R, "tyu"), */
-/*   NM2(SCLN , R, "tyo"), */
-/*   NM3(J, P, R, "dya"), */
-/*   NM3(J, SLSH, R, "dyu"), */
-/*   NM3(J, SCLN, R, "dyo"), */
-
-/*   /\* は行 *\/ */
-/*   NM2(Q, N, "hya"), */
-/*   NM2(Z, N, "hyu"), */
-/*   NM2(A, N, "hyo"), */
-/*   NM3(F, Q, N, "bya"), */
-/*   NM3(F, Z, N, "byu"), */
-/*   NM3(F, A, N, "byo"), */
-/*   NM3(V, Q, N, "pya"), */
-/*   NM3(V, Z, N, "pyu"), */
-/*   NM3(V, A, N, "pyo"), */
-
-/*   /\* な行 *\/ */
-/*   NM2(Q, H, "nya"), */
-/*   NM2(Z, H, "nyu"), */
-/*   NM2(A, H, "nyo"), */
-
-/*   /\* ま行 *\/ */
-/*   NM2(P, G, "mya"), */
-/*   NM2(SLSH, G, "myu"), */
-/*   NM2(SCLN, G, "myo"), */
-  
-/*   /\* ら行 *\/ */
-/*   NM2(Q, COMM, "rya"), */
-/*   NM2(Z, COMM, "ryu"), */
-/*   NM2(A, COMM, "ryo"), */
-/* }; */
 struct behavior_japanese_input_definition behavior_japanese_input_definitions[] = {
 
 };
