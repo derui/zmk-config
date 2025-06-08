@@ -49,29 +49,28 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = { DOT }, .result_seq = {M, A}},
     {.mapping = { SLSH }, .result_seq = {T, I}},
 
-      // shift
-    /* NSS(W, "me"), */
-    /* NSS(E, "-"), */
-    /* NSS(R, "he"), */
-    /* NSS(U, "yu"), */
-    /* NSS(I, "wa"), */
-    /* NSS(O, "ro"), */
-    /* NSS(A, "e"), */
-    /* NSS(S, "se"), */
-    /* NSS(D, "mi"), */
-    /* NSS(F, "ra"), */
-    /* NSS(G, "ho"), */
-    /* NSS(H, "so"), */
-    /* NSS(J, "yo"), */
-    /* NSS(K, "tu"), */
-    /* NSS(L, "sa"), */
-    /* NSS(SCLN, "ke"), */
-    /* NSS(Z, "hi"), */
-    /* NSS(X, "fu"), */
-    /* NSS(M, "ne"), */
-    /* NSS(COMM, "ya"), */
-    /* NSS(DOT, "mu"), */
-    /* NSS(SLSH, "nu"), */
+    {.mapping = {SPACE}, .result_seq = {W, M, E}},
+    {.mapping = {ENTER}, .result_seq = {M, I, N, U, S}},
+    {.mapping = {R}, .result_seq = {H, E}},
+    {.mapping = {U}, .result_seq = {Y, U}},
+    {.mapping = {I}, .result_seq = {W, A}},
+    {.mapping = {O}, .result_seq = {R, O}},
+    {.mapping = {A}, .result_seq = {E}},
+    {.mapping = {S}, .result_seq = {S, E}},
+    {.mapping = {D}, .result_seq = {M, I}},
+    {.mapping = {F}, .result_seq = {R, A}},
+    {.mapping = {G}, .result_seq = {H, O}},
+    {.mapping = {H}, .result_seq = {S, O}},
+    {.mapping = {J}, .result_seq = {Y, O}},
+    {.mapping = {K}, .result_seq = {T, U}},
+    {.mapping = {L}, .result_seq = {S, A}},
+    {.mapping = {SCLN}, .result_seq = {K, E}},
+    {.mapping = {Z}, .result_seq = {H, I}},
+    {.mapping = {X}, .result_seq = {F, U}},
+    {.mapping = {M}, .result_seq = {N, E}},
+    {.mapping = {COMM}, .result_seq = {Y, A}},
+    {.mapping = {DOT}, .result_seq = {M, U}},
+    {.mapping = {SLSH}, .result_seq = {N, U}},
 
 };
 
