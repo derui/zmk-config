@@ -129,7 +129,7 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = {SPACE, C}, .result_seq = {DOT}},
     {.mapping = {SPACE, V}, .result_seq = {COMMA}},
 
-    // TODO
+    // 小書き
     {.mapping = { Y, B }, .result_seq = { X, O }},
     {.mapping = { T, N }, .result_seq = { X, A }},
     {.mapping = { Y, E }, .result_seq = { X, I }},
@@ -138,6 +138,56 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = { T, U }, .result_seq = { X, Y, U }},
     {.mapping = { T, J }, .result_seq = { X, Y, O }},
     {.mapping = { T, COMM }, .result_seq = { X, Y, A }},
+
+    // 拗音拡張
+    // TODO
+    /* ND(A, I, "syu"), */
+    /* ND(A, K, "syo"), */
+    /* ND(A, COMM, "sya"), */
+
+    /* ND(C, I, "kyu"), */
+    /* ND(C, K, "kyo"), */
+    /* ND(C, COMM, "kya"), */
+
+    /* ND(SLSH, E, "tyu"), */
+    /* ND(SLSH, D, "tyo"), */
+    /* ND(SLSH, C, "tya"), */
+
+    /* ND(G, I, "nyu"), */
+    /* ND(G, K, "nyo"), */
+    /* ND(G, COMM, "nya"), */
+
+    /* ND(D, I, "myu"), */
+    /* ND(D, K, "myo"), */
+    /* ND(D, COMM, "mya"), */
+
+    /* ND(Z, I, "hyu"), */
+    /* ND(Z, K, "hyo"), */
+    /* ND(Z, COMM, "hya"), */
+
+    /* ND(X, I, "ryu"), */
+    /* ND(X, K, "ryo"), */
+    /* ND(X, COMM, "rya"), */
+    
+    /* NT(A, I, O, "zyu"), */
+    /* NT(A, K, L, "zyo"), */
+    /* NT(A, COMM, DOT, "zya"), */
+
+    /* NT(C, I, O, "gyu"), */
+    /* NT(C, K, L, "gyo"), */
+    /* NT(C, COMM, DOT, "gya"), */
+
+    /* NT(SLSH, E, W, "dyu"), */
+    /* NT(SLSH, D, S, "dyo"), */
+    /* NT(SLSH, C, X, "dya"), */
+
+    /* NT(Z, I, O, "byu"), */
+    /* NT(Z, K, L, "byo"), */
+    /* NT(Z, COMM, DOT, "bya"), */
+
+    /* NT(Z, I, U, "pyu"), */
+    /* NT(Z, K, J, "pyo"), */
+    /* NT(Z, COMM, M, "pya"), */
 
 };
 
