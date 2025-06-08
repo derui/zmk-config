@@ -27,58 +27,27 @@ struct behavior_japanese_input_definition {
   uint32_t result_seq[JAPANESE_INPUT_CAPTURE_SIZE];
 };
 
-
-/*    NS(A) => Aの単打 */
-/* #define NS(k, seq) { N_ ## k, seq } */
-    /* NS(Q, "vu"), */
-    /* NS(W, "su"), */
-    /* NS(E, "i"), */
-    /* NS(R, "xtu"), */
-    /* NS(U, "ko"), */
-    /* NS(I, "to"), */
-    /* NS(O, "ta"), */
-    /* NS(A, "shi"), */
-    /* NS(S, "no"), */
-    /* NS(D, "ku"), */
-    /* NS(F, "ru"), */
-    /* NS(G, "ni"), */
-    /* NS(H, "mo"), */
-    /* NS(J, "ka"), */
-    /* NS(K, "nn"), */
-    /* NS(L, "na"), */
-    /* NS(SCLN, "u"), */
-
-    /* NS(Z, "re"), */
-    /* NS(X, "ri"), */
-    /* NS(C, "ki"), */
-    /* NS(V, "wo"), */
-    /* NS(B, "o"), */
-    /* NS(N, "a"), */
-    /* NS(M, "ha"), */
-    /* NS(COMM, "te"), */
-    /* NS(DOT, "ma"), */
-    /* NS(SLSH, "ti"), */
 struct behavior_japanese_input_definition behavior_japanese_input_definitions[] = {
-    {.mapping = { 'A' }, .result_seq = {'s', 'h', 'i'}},
-    {.mapping = { 'S' }, .result_seq = {'n', 'o'}},
-    {.mapping = { 'D' }, .result_seq = {'k', 'u'}},
-    {.mapping = { 'F' }, .result_seq = {'r', 'u'}},
-    {.mapping = { 'G' }, .result_seq = {'n', 'i'}},
-    {.mapping = { 'H' }, .result_seq = {'m', 'o'}},
-    {.mapping = { 'J' }, .result_seq = {'k', 'a'}},
-    {.mapping = { 'K' }, .result_seq = {'n', 'n'}},
-    {.mapping = { 'L' }, .result_seq = {'n', 'a'}},
-    {.mapping = { 'SCLN' }, .result_seq = {'u'}},
-    {.mapping = { 'Z' }, .result_seq = {'r', 'e'}},
-    {.mapping = { 'X' }, .result_seq = {'r', 'i'}},
-    {.mapping = { 'C' }, .result_seq = {'k', 'i'}},
-    {.mapping = { 'V' }, .result_seq = {'w', 'o'}},
-    {.mapping = { 'B' }, .result_seq = {'o'}},
-    {.mapping = { 'N' }, .result_seq = {'a'}},
-    {.mapping = { 'M' }, .result_seq = {'h', 'a'}},
-    {.mapping = { 'COMM' }, .result_seq = {'t', 'e'}},
-    {.mapping = { 'DOT' }, .result_seq = {'m', 'a'}},
-    {.mapping = { 'SLSH' }, .result_seq = {'t', 'i'}},
+    {.mapping = { A }, .result_seq = {S, H, I}},
+    {.mapping = { S }, .result_seq = {N, O}},
+    {.mapping = { D }, .result_seq = {K, U}},
+    {.mapping = { F }, .result_seq = {R, U}},
+    {.mapping = { G }, .result_seq = {N, I}},
+    {.mapping = { H }, .result_seq = {M, O}},
+    {.mapping = { J }, .result_seq = {K, A}},
+    {.mapping = { K }, .result_seq = {N, N}},
+    {.mapping = { L }, .result_seq = {N, A}},
+    {.mapping = { SCLN }, .result_seq = {U}},
+    {.mapping = { Z }, .result_seq = {R, E}},
+    {.mapping = { X }, .result_seq = {R, I}},
+    {.mapping = { C }, .result_seq = {K, I}},
+    {.mapping = { V }, .result_seq = {W, O}},
+    {.mapping = { B }, .result_seq = {O}},
+    {.mapping = { N }, .result_seq = {A}},
+    {.mapping = { M }, .result_seq = {H, A}},
+    {.mapping = { COMM }, .result_seq = {T, E}},
+    {.mapping = { DOT }, .result_seq = {M, A}},
+    {.mapping = { SLSH }, .result_seq = {T, I}},
 };
 
 // 押されているkeycodeを保持する配列
