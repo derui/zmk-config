@@ -141,33 +141,33 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
 
     // 拗音拡張
     // TODO
-    /* ND(A, I, "syu"), */
-    /* ND(A, K, "syo"), */
-    /* ND(A, COMM, "sya"), */
+    {.mapping = {A, I}, .result_seq = {S, Y, U}},
+    {.mapping = {A, K}, .result_seq = {S, Y, O}},
+    {.mapping = {A, COMM}, .result_seq = {S, Y, A}},
 
-    /* ND(C, I, "kyu"), */
-    /* ND(C, K, "kyo"), */
-    /* ND(C, COMM, "kya"), */
+    {.mapping = {C, I}, .result_seq = {K, Y, U}},
+    {.mapping = {C, K}, .result_seq = {K, Y, O}},
+    {.mapping = {C, COMM}, .result_seq = {K, Y, A}},
 
-    /* ND(SLSH, E, "tyu"), */
-    /* ND(SLSH, D, "tyo"), */
-    /* ND(SLSH, C, "tya"), */
+    {.mapping = {SLSH, E}, .result_seq = {T, Y, U}},
+    {.mapping = {SLSH, D}, .result_seq = {T, Y, O}},
+    {.mapping = {SLSH, C}, .result_seq = {T, Y, A}},
 
-    /* ND(G, I, "nyu"), */
-    /* ND(G, K, "nyo"), */
-    /* ND(G, COMM, "nya"), */
+    {.mapping = {G, I}, .result_seq = {N, Y, U}},
+    {.mapping = {G, K}, .result_seq = {N, Y, O}},
+    {.mapping = {G, COMM}, .result_seq = {N, Y, A}},
 
-    /* ND(D, I, "myu"), */
-    /* ND(D, K, "myo"), */
-    /* ND(D, COMM, "mya"), */
+    {.mapping = {D, I}, .result_seq = {M, Y, U}},
+    {.mapping = {D, K}, .result_seq = {M, Y, O}},
+    {.mapping = {D, COMM}, .result_seq = {M, Y, A}},
 
-    /* ND(Z, I, "hyu"), */
-    /* ND(Z, K, "hyo"), */
-    /* ND(Z, COMM, "hya"), */
+    {.mapping = {Z, I}, .result_seq = {H, Y, U}},
+    {.mapping = {Z, K}, .result_seq = {H, Y, O}},
+    {.mapping = {Z, COMM}, .result_seq = {H, Y, A}},
 
-    /* ND(X, I, "ryu"), */
-    /* ND(X, K, "ryo"), */
-    /* ND(X, COMM, "rya"), */
+    {.mapping = {X, I}, .result_seq = {R, Y, U}},
+    {.mapping = {X, K}, .result_seq = {R, Y, O}},
+    {.mapping = {X, COMM}, .result_seq = {R, Y, A}},
     
     {.mapping = {A, I, O}, .result_seq = {Z, Y, U}},
     {.mapping = {A, K, L}, .result_seq = {Z, Y, O}},
