@@ -130,14 +130,14 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = {SPACE, V}, .result_seq = {COMMA}},
 
     // TODO
-    /* ND(Y, B, "xo"), */
-    /* ND(T, N, "xa"), */
-    /* ND(Y, E, "xi"), */
-    /* ND(Y, A, "xe"), */
-    /* ND(T, SCLN, "xu"), */
-    /* ND(T, U, "xyu"), */
-    /* ND(T, J, "xyo"), */
-    /* ND(T, COMM, "xya"), */
+    {.mapping = { Y, B }, .result_seq = { X, O }},
+    {.mapping = { T, N }, .result_seq = { X, A }},
+    {.mapping = { Y, E }, .result_seq = { X, I }},
+    {.mapping = { Y, A }, .result_seq = { X, E }},
+    {.mapping = { T, SCLN }, .result_seq = { X, U }},
+    {.mapping = { T, U }, .result_seq = { X, Y, U }},
+    {.mapping = { T, J }, .result_seq = { X, Y, O }},
+    {.mapping = { T, COMM }, .result_seq = { X, Y, A }},
 
 };
 
