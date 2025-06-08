@@ -59,7 +59,26 @@ struct behavior_japanese_input_definition {
     /* NS(DOT, "ma"), */
     /* NS(SLSH, "ti"), */
 struct behavior_japanese_input_definition behavior_japanese_input_definitions[] = {
-
+    {.mapping = { 'A' }, .result_seq = {'s', 'h', 'i'}},
+    {.mapping = { 'S' }, .result_seq = {'n', 'o'}},
+    {.mapping = { 'D' }, .result_seq = {'k', 'u'}},
+    {.mapping = { 'F' }, .result_seq = {'r', 'u'}},
+    {.mapping = { 'G' }, .result_seq = {'n', 'i'}},
+    {.mapping = { 'H' }, .result_seq = {'m', 'o'}},
+    {.mapping = { 'J' }, .result_seq = {'k', 'a'}},
+    {.mapping = { 'K' }, .result_seq = {'n', 'n'}},
+    {.mapping = { 'L' }, .result_seq = {'n', 'a'}},
+    {.mapping = { 'SCLN' }, .result_seq = {'u'}},
+    {.mapping = { 'Z' }, .result_seq = {'r', 'e'}},
+    {.mapping = { 'X' }, .result_seq = {'r', 'i'}},
+    {.mapping = { 'C' }, .result_seq = {'k', 'i'}},
+    {.mapping = { 'V' }, .result_seq = {'w', 'o'}},
+    {.mapping = { 'B' }, .result_seq = {'o'}},
+    {.mapping = { 'N' }, .result_seq = {'a'}},
+    {.mapping = { 'M' }, .result_seq = {'h', 'a'}},
+    {.mapping = { 'COMM' }, .result_seq = {'t', 'e'}},
+    {.mapping = { 'DOT' }, .result_seq = {'m', 'a'}},
+    {.mapping = { 'SLSH' }, .result_seq = {'t', 'i'}},
 };
 
 // 押されているkeycodeを保持する配列
