@@ -97,31 +97,31 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = {ENTER, SLSH}, .result_seq = {N, U}},
 
     // TODO convert then
-    /* ND(W, J, "zu"), */
-    /* ND(R, J, "be"), */
-    /* ND(U, F, "go"), */
-    /* ND(I, F, "do"), */
-    /* ND(O, F, "da"), */
-    /* ND(A, J, "zi"), */
-    /* ND(S, J, "ze"), */
-    /* ND(D, J, "gu"), */
-    /* ND(G, J, "bo"), */
-    /* ND(H, F, "zo"), */
-    /* ND(J, F, "ga"), */
-    /* ND(K, F, "du"), */
-    /* ND(L, F, "za"), */
-    /* ND(SCLN, F, "ge"), */
-    /* ND(Z, J, "bi"), */
-    /* ND(X, J, "bu"), */
-    /* ND(C, J, "gi"), */
-    /* ND(M, F, "ba"), */
-    /* ND(COMM, F, "de"), */
-    /* ND(SLSH, F, "di"), */
-    /* ND(R, M, "pe"), */
-    /* ND(G, M, "po"), */
-    /* ND(Z, M, "pi"), */
-    /* ND(X, M, "pu"), */
-    /* ND(V, M, "pa"), */
+    {.mapping = {W, J}, .result_seq = {Z, U}},
+    {.mapping = {R, J}, .result_seq = {B, E}},
+    {.mapping = {U, F}, .result_seq = {G, O}},
+    {.mapping = {I, F}, .result_seq = {D, O}},
+    {.mapping = {O, F}, .result_seq = {D, A}},
+    {.mapping = {A, J}, .result_seq = {Z, I}},
+    {.mapping = {S, J}, .result_seq = {Z, E}},
+    {.mapping = {D, J}, .result_seq = {G, U}},
+    {.mapping = {G, J}, .result_seq = {B, O}},
+    {.mapping = {H, F}, .result_seq = {Z, O}},
+    {.mapping = {J, F}, .result_seq = {G, A}},
+    {.mapping = {K, F}, .result_seq = {D, U}},
+    {.mapping = {L, F}, .result_seq = {Z, A}},
+    {.mapping = {SCLN, F}, .result_seq = {G, E}},
+    {.mapping = {Z, J}, .result_seq = {B, I}},
+    {.mapping = {X, J}, .result_seq = {B, U}},
+    {.mapping = {C, J}, .result_seq = {G, I}},
+    {.mapping = {M, F}, .result_seq = {B, A}},
+    {.mapping = {COMM, F}, .result_seq = {D, E}},
+    {.mapping = {SLSH, F}, .result_seq = {D, I}},
+    {.mapping = {R, M}, .result_seq = {P, E}},
+    {.mapping = {G, M}, .result_seq = {P, O}},
+    {.mapping = {Z, M}, .result_seq = {P, I}},
+    {.mapping = {X, M}, .result_seq = {P, U}},
+    {.mapping = {V, M}, .result_seq = {P, A}},
 };
 
 // 押されているkeycodeを保持する配列
