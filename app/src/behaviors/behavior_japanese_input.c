@@ -96,6 +96,32 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = {ENTER, DOT}, .result_seq = {M, U}},
     {.mapping = {ENTER, SLSH}, .result_seq = {N, U}},
 
+    // TODO convert then
+    /* ND(W, J, "zu"), */
+    /* ND(R, J, "be"), */
+    /* ND(U, F, "go"), */
+    /* ND(I, F, "do"), */
+    /* ND(O, F, "da"), */
+    /* ND(A, J, "zi"), */
+    /* ND(S, J, "ze"), */
+    /* ND(D, J, "gu"), */
+    /* ND(G, J, "bo"), */
+    /* ND(H, F, "zo"), */
+    /* ND(J, F, "ga"), */
+    /* ND(K, F, "du"), */
+    /* ND(L, F, "za"), */
+    /* ND(SCLN, F, "ge"), */
+    /* ND(Z, J, "bi"), */
+    /* ND(X, J, "bu"), */
+    /* ND(C, J, "gi"), */
+    /* ND(M, F, "ba"), */
+    /* ND(COMM, F, "de"), */
+    /* ND(SLSH, F, "di"), */
+    /* ND(R, M, "pe"), */
+    /* ND(G, M, "po"), */
+    /* ND(Z, M, "pi"), */
+    /* ND(X, M, "pu"), */
+    /* ND(V, M, "pa"), */
 };
 
 // 押されているkeycodeを保持する配列
