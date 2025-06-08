@@ -140,7 +140,6 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = { T, COMM }, .result_seq = { X, Y, A }},
 
     // 拗音拡張
-    // TODO
     {.mapping = {A, I}, .result_seq = {S, Y, U}},
     {.mapping = {A, K}, .result_seq = {S, Y, O}},
     {.mapping = {A, COMM}, .result_seq = {S, Y, A}},
