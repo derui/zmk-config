@@ -169,25 +169,25 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     /* ND(X, K, "ryo"), */
     /* ND(X, COMM, "rya"), */
     
-    /* NT(A, I, O, "zyu"), */
-    /* NT(A, K, L, "zyo"), */
-    /* NT(A, COMM, DOT, "zya"), */
+    {.mapping = {A, I, O}, .result_seq = {Z, Y, U}},
+    {.mapping = {A, K, L}, .result_seq = {Z, Y, O}},
+    {.mapping = {A, COMM, DOT}, .result_seq = {Z, Y, A}},
 
-    /* NT(C, I, O, "gyu"), */
-    /* NT(C, K, L, "gyo"), */
-    /* NT(C, COMM, DOT, "gya"), */
+    {.mapping = {C, I, O}, .result_seq = {G, Y, U}},
+    {.mapping = {C, K, L}, .result_seq = {G, Y, O}},
+    {.mapping = {C, COMM, DOT}, .result_seq = {G, Y, A}},
 
-    /* NT(SLSH, E, W, "dyu"), */
-    /* NT(SLSH, D, S, "dyo"), */
-    /* NT(SLSH, C, X, "dya"), */
+    {.mapping = {SLSH, E, W}, .result_seq = {D, Y, U}},
+    {.mapping = {SLSH, D, S}, .result_seq = {D, Y, O}},
+    {.mapping = {SLSH, C, X}, .result_seq = {D, Y, A}},
 
-    /* NT(Z, I, O, "byu"), */
-    /* NT(Z, K, L, "byo"), */
-    /* NT(Z, COMM, DOT, "bya"), */
+    {.mapping = {Z, I, O}, .result_seq = {B, Y, U}},
+    {.mapping = {Z, K, L}, .result_seq = {B, Y, O}},
+    {.mapping = {Z, COMM, DOT}, .result_seq = {B, Y, A}},
 
-    /* NT(Z, I, U, "pyu"), */
-    /* NT(Z, K, J, "pyo"), */
-    /* NT(Z, COMM, M, "pya"), */
+    {.mapping = {Z, I, U}, .result_seq = {P, Y, U}},
+    {.mapping = {Z, K, J}, .result_seq = {P, Y, O}},
+    {.mapping = {Z, COMM, M}, .result_seq = {P, Y, A}},
 
 };
 
