@@ -48,6 +48,31 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = { COMM }, .result_seq = {T, E}},
     {.mapping = { DOT }, .result_seq = {M, A}},
     {.mapping = { SLSH }, .result_seq = {T, I}},
+
+      // shift
+    /* NSS(W, "me"), */
+    /* NSS(E, "-"), */
+    /* NSS(R, "he"), */
+    /* NSS(U, "yu"), */
+    /* NSS(I, "wa"), */
+    /* NSS(O, "ro"), */
+    /* NSS(A, "e"), */
+    /* NSS(S, "se"), */
+    /* NSS(D, "mi"), */
+    /* NSS(F, "ra"), */
+    /* NSS(G, "ho"), */
+    /* NSS(H, "so"), */
+    /* NSS(J, "yo"), */
+    /* NSS(K, "tu"), */
+    /* NSS(L, "sa"), */
+    /* NSS(SCLN, "ke"), */
+    /* NSS(Z, "hi"), */
+    /* NSS(X, "fu"), */
+    /* NSS(M, "ne"), */
+    /* NSS(COMM, "ya"), */
+    /* NSS(DOT, "mu"), */
+    /* NSS(SLSH, "nu"), */
+
 };
 
 // 押されているkeycodeを保持する配列
