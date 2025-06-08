@@ -28,59 +28,36 @@ struct behavior_japanese_input_definition {
 };
 
 
-/*   /\* 各シフトシーケンスを生成するためのdefinition */
-/*    次のように使う。 */
+/*    NS(A) => Aの単打 */
+/* #define NS(k, seq) { N_ ## k, seq } */
+    /* NS(Q, "vu"), */
+    /* NS(W, "su"), */
+    /* NS(E, "i"), */
+    /* NS(R, "xtu"), */
+    /* NS(U, "ko"), */
+    /* NS(I, "to"), */
+    /* NS(O, "ta"), */
+    /* NS(A, "shi"), */
+    /* NS(S, "no"), */
+    /* NS(D, "ku"), */
+    /* NS(F, "ru"), */
+    /* NS(G, "ni"), */
+    /* NS(H, "mo"), */
+    /* NS(J, "ka"), */
+    /* NS(K, "nn"), */
+    /* NS(L, "na"), */
+    /* NS(SCLN, "u"), */
 
-/*    NSI(A) => Aの単打 */
-/*    NM2(F, K) => FとKの同時シフト */
-/*    MN3(F, K, Q) => AとKとQの同時シフト */
-/*  *\/ */
-/* #define NSI(k, seq) { N_ ## k, seq } */
-/* #define NSS(k, seq) { SHIFT_BIT | N_ ## k, seq } */
-/* #define NM2(k1, k2, seq) { (N_ ## k1 | (N_ ## k2 << 5)), seq } */
-/* #define NM3(k1, k2, k3, seq) { N_ ## k1 | (N_ ## k2 << 5) | (N_ ## k3 << 10), seq} */
-
-/* /\* シフトキーを定義する構造体。 *\/ */
-/* typedef struct { */
-/*   /\* LSB is shift mark. *\/ */
-/*   uint16_t keycodes; */
-/*   const char* sequence; */
-/* } seq_definition_t; */
-
-/* /\* 複数キーの定義 *\/ */
-/* seq_definition_t seq_definitions[] = { */
-  
-/*   /\* Q行 *\/ */
-/*   NSI(W, "ku"), */
-/*   NSI(E, "si"), */
-/*   NSI(R, "ma"), */
-/*   NSI(U, "wo"), */
-/*   NSI(I, "ki"), */
-/*   NSI(O, "su"), */
-
-/*   /\* A行 *\/ */
-/*   NSI(A, "ta"), */
-/*   NSI(S, "u"), */
-/*   NSI(D, "na"), */
-/*   NSI(F, "ka"), */
-/*   NSI(G, "te"), */
-/*   NSI(H, "ni"), */
-/*   NSI(J, "ru"), */
-/*   NSI(K, "no"), */
-/*   NSI(L, "i"), */
-/*   NSI(SCLN, "nn"), */
-  
-/*   /\* Z行 *\/ */
-/*   NSI(Z, "ko"), */
-/*   NSI(X, "ha"), */
-/*   NSI(C, "mo"), */
-/*   NSI(V, "to"), */
-/*   NSI(B, "a"), */
-/*   NSI(N, "o"), */
-/*   NSI(M, "ra"), */
-/*   NSI(COMM, "ri"), */
-/*   NSI(DOT, "xtu"), */
-/*   NSI(SLSH, "tu"), */
+    /* NS(Z, "re"), */
+    /* NS(X, "ri"), */
+    /* NS(C, "ki"), */
+    /* NS(V, "wo"), */
+    /* NS(B, "o"), */
+    /* NS(N, "a"), */
+    /* NS(M, "ha"), */
+    /* NS(COMM, "te"), */
+    /* NS(DOT, "ma"), */
+    /* NS(SLSH, "ti"), */
 struct behavior_japanese_input_definition behavior_japanese_input_definitions[] = {
 
 };
