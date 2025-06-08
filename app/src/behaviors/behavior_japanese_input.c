@@ -187,7 +187,6 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = {Z, I, U}, .result_seq = {P, Y, U}},
     {.mapping = {Z, K, J}, .result_seq = {P, Y, O}},
     {.mapping = {Z, COMM, M}, .result_seq = {P, Y, A}},
-
 };
 
 // 押されているkeycodeを保持する配列
@@ -200,6 +199,19 @@ void japanese_input_capture_keycode(uint32_t keycode) {
       captured_keycodes[i + 1] = captured_keycodes[i];
     }
     captured_keycodes[0] = keycode;
+}
+
+// seqをkeycodeの順にsortする
+void japanese_input_sort_sequence(uint32_t *seq, size_t size) {
+    for (size_t i = 0; i < size - 1; ++i) {
+        for (size_t j = i + 1; j < size; ++j) {
+            if (seq[i] > seq[j]) {
+                uint32_t temp = seq[i];
+                seq[i] = seq[j];
+                seq[j] = temp;
+            }
+        }
+    }
 }
 
 static int on_japanese_input_binding_pressed(struct zmk_behavior_binding *binding,
@@ -224,7 +236,15 @@ static int japanese_input_init(const struct device *dev) {
 
   if (!initialized) {
     // initialize the captured keycodes to zero
-    captured_keycodes = {0,0,0};
+    for (int i = 0; i < JAPANESE_INPUT_CAPTURE_SIZE; i++) {
+      captured_keycodes[i] = 0;
+    }
+
+    // stadardize order of mapping
+    int definition_size = sizeof(behavior_japanese_input_definitions) / sizeof(behavior_japanese_input_definitions[0]);
+    for (int i = 0; i < definition_size; i++) {
+      japanese_input_sort_sequence(behavior_japanese_input_definitions[i].mapping, JAPANESE_INPUT_CAPTURE_SIZE);
+    }
   }
   initialized = true;
   return 0;
