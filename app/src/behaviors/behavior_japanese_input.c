@@ -96,7 +96,7 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = {ENTER, DOT}, .result_seq = {M, U}},
     {.mapping = {ENTER, SLSH}, .result_seq = {N, U}},
 
-    // TODO convert then
+    // 濁音・半濁音
     {.mapping = {W, J}, .result_seq = {Z, U}},
     {.mapping = {R, J}, .result_seq = {B, E}},
     {.mapping = {U, F}, .result_seq = {G, O}},
@@ -122,6 +122,23 @@ struct behavior_japanese_input_definition behavior_japanese_input_definitions[] 
     {.mapping = {Z, M}, .result_seq = {P, I}},
     {.mapping = {X, M}, .result_seq = {P, U}},
     {.mapping = {V, M}, .result_seq = {P, A}},
+
+    // special
+    {.mapping = {ENTER, C}, .result_seq = {DOT}},
+    {.mapping = {ENTER, V}, .result_seq = {COMMA}},
+    {.mapping = {SPACE, C}, .result_seq = {DOT}},
+    {.mapping = {SPACE, V}, .result_seq = {COMMA}},
+
+    // TODO
+    /* ND(Y, B, "xo"), */
+    /* ND(T, N, "xa"), */
+    /* ND(Y, E, "xi"), */
+    /* ND(Y, A, "xe"), */
+    /* ND(T, SCLN, "xu"), */
+    /* ND(T, U, "xyu"), */
+    /* ND(T, J, "xyo"), */
+    /* ND(T, COMM, "xya"), */
+
 };
 
 // 押されているkeycodeを保持する配列
