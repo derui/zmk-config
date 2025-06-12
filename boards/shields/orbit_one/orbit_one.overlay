@@ -43,29 +43,6 @@ RC(2,5) RC(2,4) RC(2,3) RC(2,2) RC(2,1) RC(2,0)                   RC(2,6) RC(2,7
         diode-direction = "col2row";
         // row1 -> row4
         row-gpios
-            = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
-        // col1 -> col6
-        col-gpios
-            = <&pro_micro 19 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 4 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH)>
-            ;
-    };
-
-    kscan_right: kscan_right_matrix {
-        compatible = "zmk,kscan-gpio-matrix";
-        wakeup-source;
-
-        diode-direction = "row2col";
-        // row1 -> row4
-        row-gpios
             = <&pro_micro 14 (GPIO_ACTIVE_HIGH)>
             , <&pro_micro 16 (GPIO_ACTIVE_HIGH)>
             , <&pro_micro 7 (GPIO_ACTIVE_HIGH)>
@@ -79,6 +56,29 @@ RC(2,5) RC(2,4) RC(2,3) RC(2,2) RC(2,1) RC(2,0)                   RC(2,6) RC(2,7
             , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
+    kscan_right: kscan_right_matrix {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+
+        diode-direction = "row2col";
+        // row1 -> row4
+        row-gpios
+            = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+        // col1 -> col6
+        col-gpios
+            = <&pro_micro 19 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 4 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 5 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 6 (GPIO_ACTIVE_HIGH)>
             ;
     };
 
