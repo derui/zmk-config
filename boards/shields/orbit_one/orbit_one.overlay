@@ -119,11 +119,8 @@ RC(2,5) RC(2,4) RC(2,3) RC(2,2) RC(2,1) RC(2,0)                   RC(2,6) RC(2,7
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-    };
-};
 
-&physical_layout0 {
-    kscan = <&kscan0>;
+      kscan = <&kscan0>;
     transform = <&default_transform>;
 
     keys  //                     w   h    x    y     rot    rx    ry
@@ -172,7 +169,7 @@ RC(2,5) RC(2,4) RC(2,3) RC(2,2) RC(2,1) RC(2,0)                   RC(2,6) RC(2,7
             , <&key_physical_attrs 100 100 1200  315       0     0     0>
             , <&key_physical_attrs 100 100 1300  315       0     0     0>
             ;
-
+    };
 };
 
 &pro_micro_i2c {
