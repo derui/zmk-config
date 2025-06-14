@@ -132,7 +132,7 @@
     status = "okay";
 
     glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle-i2c";
+        compatible = "cirque,pinnacle";
         reg = <0x2a>;
         status = "okay";
 
