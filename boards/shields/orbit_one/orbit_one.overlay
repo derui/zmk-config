@@ -41,7 +41,7 @@
             , <&pro_micro 5 (GPIO_ACTIVE_HIGH)>
             , <&pro_micro 6 (GPIO_ACTIVE_HIGH)>
             ;
-    }
+    };
 
     /* kscan0: kscan_composite { */
     /*     compatible = "zmk,kscan-composite"; */
