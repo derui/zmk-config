@@ -4,6 +4,7 @@ name: Orbit One
 type: shield
 url: https://github.com/derui/orbit-one
 requires: [pro_micro]
+exposes: [i2c_glidepoint]
 features:
   - keys
   - pointer
