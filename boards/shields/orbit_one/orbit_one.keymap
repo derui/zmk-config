@@ -35,7 +35,7 @@
                                   &none     &none    &none                     &none    &none    &none
       >;
 
-        sensor-bindings = <&rot_kp DOWN UP &rot_kp RIGHT LEFT>;
+        sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
 
     qwerty {
@@ -45,7 +45,7 @@
       &kp LSHFT &kp Z &kp X &kp C     &kp V    &kp B                          &kp N     &kp M    &kp COMMA &kp DOT &kp FSLH &kp LALT
                              &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
       >;
-      sensor-bindings = <&rot_kp DOWN UP &rot_kp RIGHT LEFT>;
+      sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
 
     gallium {
@@ -56,7 +56,7 @@
                              &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
       >;
 
-          sensor-bindings = <&rot_kp DOWN UP &rot_kp RIGHT LEFT>;
+          sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
 
     lower {
@@ -67,7 +67,7 @@
                                &trans   &trans   &trans           &trans   &trans   &trans
       >;
 
-          sensor-bindings = <&rot_kp DOWN UP &rot_kp END HOME>;
+          sensor-bindings = <&rot_kp UP DOWN &rot_kp HOME END>;
     };
     raise {
       bindings = <
@@ -77,7 +77,7 @@
                                  &trans &trans     &trans         &trans     &trans    &trans
       >;
 
-          sensor-bindings = <&rot_kp PG_DN PG_UP &rot_kp RIGHT LEFT>;
+          sensor-bindings = <&rot_kp PG_UP PG_DN &rot_kp  LEFT RIGHT>;
     };
 
     adjust {
