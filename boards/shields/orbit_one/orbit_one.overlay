@@ -29,17 +29,17 @@
       wakeup-source;
 
             // row1 -> row4
-      gpios = <&pro_micro 14 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 7 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 8 (GPIO_ACTIVE_HIGH)>
+      gpios = <&pro_micro 14 (GPIO_ACTIVE_HIGH)>  // 0
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH)>  // 1
+            , <&pro_micro 7 (GPIO_ACTIVE_HIGH)>   // 2
+            , <&pro_micro 8 (GPIO_ACTIVE_HIGH)>   // 3
             // col1 -> col6
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 4 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH)>  // 4
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH)>  // 5
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH)>  // 6
+            , <&pro_micro 4 (GPIO_ACTIVE_HIGH)>   // 7
+            , <&pro_micro 5 (GPIO_ACTIVE_HIGH)>   // 8
+            , <&pro_micro 6 (GPIO_ACTIVE_HIGH)>   // 9
             ;
     };
 
@@ -67,7 +67,7 @@
     };
 
     // pointing device
-    glidepoint_listener {
+    glidepoint_listener: glidepoint_input {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
     };
