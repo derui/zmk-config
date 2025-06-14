@@ -17,13 +17,7 @@
 
 / {
   behaviors {
-      left_rot: sensor_rotate_kp_left {
-          compatible = "zmk,behavior-sensor-rotate-var";
-          #sensor-binding-cells = <2>;
-          bindings = <&kp>, <&kp>;
-      };
-
-      right_rot: sensor_rotate_kp_right {
+      rot_kp: sensor_rotate_kp {
           compatible = "zmk,behavior-sensor-rotate-var";
           #sensor-binding-cells = <2>;
           bindings = <&kp>, <&kp>;
@@ -41,7 +35,7 @@
                                   &none     &none    &none                     &none    &none    &none
       >;
 
-        sensor-bindings = <&left_rot DOWN UP>, <&right_rot RIGHT LEFT>;
+        sensor-bindings = <&rot_kp DOWN UP &rot_kp RIGHT LEFT>;
     };
 
     qwerty {
@@ -51,7 +45,7 @@
       &kp LSHFT &kp Z &kp X &kp C     &kp V    &kp B                          &kp N     &kp M    &kp COMMA &kp DOT &kp FSLH &kp LALT
                              &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
       >;
-      sensor-bindings = <&left_rot DOWN UP>, <&right_rot RIGHT LEFT>;
+      sensor-bindings = <&rot_kp DOWN UP &rot_kp RIGHT LEFT>;
     };
 
     gallium {
@@ -62,7 +56,7 @@
                              &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
       >;
 
-          sensor-bindings = <&left_rot DOWN UP>, <&right_rot RIGHT LEFT>;
+          sensor-bindings = <&rot_kp DOWN UP &rot_kp RIGHT LEFT>;
     };
 
     lower {
@@ -73,7 +67,7 @@
                                &trans   &trans   &trans           &trans   &trans   &trans
       >;
 
-          sensor-bindings = <&left_rot DOWN UP>, <&right_rot END HOME>;
+          sensor-bindings = <&rot_kp DOWN UP &rot_kp END HOME>;
     };
     raise {
       bindings = <
@@ -83,7 +77,7 @@
                                  &trans &trans     &trans         &trans     &trans    &trans
       >;
 
-          sensor-bindings = <&left_rot PG_DN PG_UP>, <&right_rot RIGHT LEFT>;
+          sensor-bindings = <&rot_kp PG_DN PG_UP &rot_kp RIGHT LEFT>;
     };
 
     adjust {
