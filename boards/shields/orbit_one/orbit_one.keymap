@@ -40,20 +40,20 @@
 
     qwerty {
       bindings = <
-  &lt ADJT ESC  &kp Q &kp W &kp E     &kp R    &kp T                          &kp Y     &kp U    &kp I     &kp O   &kp P    &kp DEL
-  &mt LCTRL TAB &kp A &kp S &kp D     &kp F    &kp G                          &kp H     &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-      &kp LSHFT &kp Z &kp X &kp C     &kp V    &kp B                          &kp N     &kp M    &kp COMMA &kp DOT &kp FSLH &kp LALT
-                             &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
+  &lt ADJT ESC  &kp Q &kp W &kp E           &kp R    &kp T                    &kp Y           &kp U    &kp I     &kp O   &kp P    &kp DEL
+  &mt LCTRL TAB &kp A &kp S &kp D           &kp F    &kp G                    &kp H           &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+      &kp LSHFT &kp Z &kp X &kp C           &kp V    &kp B                    &kp N           &kp M    &kp COMMA &kp DOT &kp FSLH &kp LALT
+                             &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &mt LGUI LANG1
       >;
       sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
 
     gallium {
       bindings = <
-  &lt ADJT ESC  &kp B &kp L &kp D     &kp C    &kp V                          &kp J     &kp F    &kp O     &kp U    &kp COMMA &kp DEL
-  &mt LCTRL TAB &kp N &kp R &kp T     &kp S    &kp G                          &kp Y     &kp H    &kp A     &kp E    &kp I     &kp FSLH
-      &kp LSHFT &kp X &kp Q &kp M     &kp W    &kp Z                          &kp K     &kp P    &kp SQT   &kp SEMI &kp DOT   &kp LALT
-                             &kp LALT &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &kp LGUI
+  &lt ADJT ESC  &kp B &kp L &kp D          &kp C    &kp V                    &kp J           &kp F    &kp O     &kp U    &kp COMMA &kp DEL
+  &mt LCTRL TAB &kp N &kp R &kp T          &kp S    &kp G                    &kp Y           &kp H    &kp A     &kp E    &kp I     &kp FSLH
+      &kp LSHFT &kp X &kp Q &kp M          &kp W    &kp Z                    &kp K           &kp P    &kp SQT   &kp SEMI &kp DOT   &kp LALT
+                            &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &mt LGUI LANG1
       >;
 
           sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
@@ -73,7 +73,7 @@
       bindings = <
   &kp TILDE &kp EXCL &kp AT   &kp HASH  &kp DOLLAR &kp PERCENT    &kp CARET  &kp AMPS  &kp ASTRK &kp LPRN  &kp RPRN &kp BSPC
   &trans    &kp LBKT &kp LT   &kp FSLH  &kp GT     &kp RBKT       &trans     &kp MINUS &kp EQUAL &kp GRAVE &kp PIPE &trans
-  &trans    &trans   &kp LBRC &kp QMARK &kp RBRC   &trans         &trans     &kp UNDER &kp PLUS  &kp TILDE &kp BSLH
+  &trans    &trans   &kp LBRC &kp QMARK &kp RBRC   &trans         &trans     &kp UNDER &kp PLUS  &kp TILDE &kp BSLH &trans
                                  &trans &trans     &trans         &trans     &trans    &trans
       >;
 
@@ -82,10 +82,10 @@
 
     adjust {
       bindings = <
-  &trans         &bt BT_NXT &bt BT_PRV &trans       &trans &bt BT_CLR              &to QWER &to GALI &trans &trans &trans &bootloader
-  &studio_unlock &trans     &trans     &trans       &trans &trans                  &trans   &trans   &trans &trans &trans &trans
-  &trans         &trans     &trans     &trans       &trans &trans                  &trans   &trans   &trans &trans &trans &trans
-                                       &out OUT_TOG &trans &trans                  &trans   &trans   &trans
+  &trans         &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR              &to QWER &to GALI &trans &trans &trans &bootloader
+  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans                  &trans   &trans   &trans &trans &trans &trans
+  &trans         &trans       &trans       &trans       &trans       &trans                  &trans   &trans   &trans &trans &trans &trans
+                                           &out OUT_TOG &trans       &trans                  &trans   &trans   &trans
       >;
     };
   };
