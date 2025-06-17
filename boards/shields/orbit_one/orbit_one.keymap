@@ -40,7 +40,7 @@
 
     qwerty {
       bindings = <
-  &lt ADJT ESC  &kp Q &kp W &kp E           &kp R    &kp T                    &kp Y           &kp U    &kp I     &kp O   &kp P    &kp DEL
+  &lt ADJT ESC  &kp Q &kp W &kp E           &kp R    &kp T                    &kp Y           &kp U    &kp I     &kp O   &kp P    &kp BSPC
   &mt LCTRL TAB &kp A &kp S &kp D           &kp F    &kp G                    &kp H           &kp J    &kp K     &kp L   &kp SEMI &kp SQT
       &kp LSHFT &kp Z &kp X &kp C           &kp V    &kp B                    &kp N           &kp M    &kp COMMA &kp DOT &kp FSLH &kp LALT
                              &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &mt LGUI LANG1
@@ -50,7 +50,7 @@
 
     gallium {
       bindings = <
-  &lt ADJT ESC  &kp B &kp L &kp D          &kp C    &kp V                    &kp J           &kp F    &kp O     &kp U    &kp COMMA &kp DEL
+  &lt ADJT ESC  &kp B &kp L &kp D          &kp C    &kp V                    &kp J           &kp F    &kp O     &kp U    &kp COMMA &kp BSPC
   &mt LCTRL TAB &kp N &kp R &kp T          &kp S    &kp G                    &kp Y           &kp H    &kp A     &kp E    &kp I     &kp FSLH
       &kp LSHFT &kp X &kp Q &kp M          &kp W    &kp Z                    &kp K           &kp P    &kp SQT   &kp SEMI &kp DOT   &kp LALT
                             &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &mo RAIS &mt LGUI LANG1
@@ -61,9 +61,9 @@
 
     lower {
       bindings = <
-  &kp GRAVE &kp N1    &kp N2   &kp N3   &kp N4   &kp N5           &kp N6   &kp N7   &kp N8 &kp N9    &kp N0  &kp BSPC
+  &kp GRAVE &kp N1    &kp N2   &kp N3   &kp N4   &kp N5           &kp N6   &kp N7   &kp N8 &kp N9    &kp N0  &kp DEL
   &trans    &kp LCTRL &kp LSFT &kp LALT &kp LGUI &trans           &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans  &trans
-  &trans    &kp F1    &kp F2   &kp F3   &kp F4   &kp F5           &kp F6   &kp F7   &kp F8 &kp F9    &kp F10
+  &trans    &kp F1    &kp F2   &kp F3   &kp F4   &kp F5           &kp F6   &kp F7   &kp F8 &kp F9    &kp F10 &trans
                                &trans   &trans   &trans           &trans   &trans   &trans
       >;
 
@@ -71,7 +71,7 @@
     };
     raise {
       bindings = <
-  &kp TILDE &kp EXCL &kp AT   &kp HASH  &kp DOLLAR &kp PERCENT    &kp CARET  &kp AMPS  &kp ASTRK &kp LPRN  &kp RPRN &kp BSPC
+  &kp TILDE &kp EXCL &kp AT   &kp HASH  &kp DOLLAR &kp PERCENT    &kp CARET  &kp AMPS  &kp ASTRK &kp LPRN  &kp RPRN &kp DEL
   &trans    &kp LBKT &kp LT   &kp FSLH  &kp GT     &kp RBKT       &trans     &kp MINUS &kp EQUAL &kp GRAVE &kp PIPE &trans
   &trans    &trans   &kp LBRC &kp QMARK &kp RBRC   &trans         &trans     &kp UNDER &kp PLUS  &kp TILDE &kp BSLH &trans
                                  &trans &trans     &trans         &trans     &trans    &trans
