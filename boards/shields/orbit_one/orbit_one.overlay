@@ -129,7 +129,9 @@
     };
 };
 
-&pro_micro_i2c {
+&i2c0 {
+    // use twim driver forcibly
+	compatible = "nordic,nrf-twim";
     status = "okay";
 
     glidepoint: glidepoint@2a {
