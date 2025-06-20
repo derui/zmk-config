@@ -23,6 +23,6 @@ shield: [ "orbit_one" ]
 include:
   - board: nice_nano_v2
     shield: orbit_one
-    # snippet: zmk-usb-logging
+    snippet: zmk-usb-logging
     # snippet: studio-rpc-usb-uart
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
