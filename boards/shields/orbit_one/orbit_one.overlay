@@ -134,11 +134,12 @@
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
-        dr-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH)>;
+        dr-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         status = "okay";
 
         sensitivity = "4x";
         sleep;
         no-taps;
+        rotate-90;
     };
 };
