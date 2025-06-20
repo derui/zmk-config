@@ -67,7 +67,7 @@
     };
 
     // pointing device
-    glidepoint_listener: glidepoint_input {
+    glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
     };
