@@ -140,5 +140,7 @@
         sensitivity = "4x";
         sleep;
         no-taps;
+
+        ready-time-ms = <250>;
     };
 };
