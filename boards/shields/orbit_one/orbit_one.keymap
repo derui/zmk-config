@@ -85,7 +85,7 @@
     adjust {
       bindings = <
   &trans         &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR              &to QWER &to GALI &trans &trans &trans &bootloader
-  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans                  &trans   &trans   &trans &trans &trans &&ext_power EP_ON
+  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans                  &trans   &trans   &trans &trans &trans &ext_power EP_ON
   &trans         &trans       &trans       &trans       &trans       &trans                  &trans   &trans   &trans &trans &trans &trans
                                            &out OUT_TOG &trans       &trans                  &trans   &trans   &trans
       >;
