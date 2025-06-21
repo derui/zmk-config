@@ -36,6 +36,12 @@
           #sensor-binding-cells = <2>;
           bindings = <&kp>, <&kp>;
       };
+
+      rot_msc: sensor_rotate_msc {
+          compatible = "zmk,behavior-sensor-rotate-var";
+          #sensor-binding-cells = <2>;
+          bindings = <&msc>, <&msc>;
+      };
   };
   
   keymap {
@@ -54,13 +60,13 @@
 
     mouse {
       bindings = <
-  &lt ADJT ESC   &none    &none    &none     &none    &none                     &none    &none     &none     &none   &none     &none
-  &kp LCTL       &none    &none    &none     &none    &none                     &none    &mkp LCLK &mkp RCLK &none   &mkp MCLK &none
-  &none          &none    &none    &none     &none    &none                     &none    &none     &none     &none   &none     &none
-                                   &none     &none    &none                     &none    &none     &none
+  &none     &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
+  &kp LCTL  &mkp MCLK &none    &mkp RCLK &mkp LCLK &none                     &none    &mkp LCLK &mkp RCLK &none   &mkp MCLK &none
+  &none     &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
+                               &none     &none     &none                     &none    &none     &none
       >;
 
-        sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
+        sensor-bindings = <&rot_msc SCRL_UP SCRL_DOWN &rot_msc SCRL_LEFT SCRL_RIGHT>;
     };
     qwerty {
       bindings = <
@@ -101,7 +107,7 @@
                                  &trans &trans     &trans         &trans     &trans    &trans
       >;
 
-          sensor-bindings = <&rot_kp PG_UP PG_DN &rot_kp  LEFT RIGHT>;
+          sensor-bindings = <&rot_kp PG_UP PG_DN &rot_kp LEFT RIGHT>;
     };
 
     adjust {

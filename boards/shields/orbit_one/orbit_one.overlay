@@ -76,6 +76,9 @@
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         excluded-positions = <
+            15 // F
+            14 // D
+            12 // A
             18 // J
             19 // K
             21 // ;
@@ -87,7 +90,7 @@
     glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,<&zip_temp_layer 1 10000>,<&zip_xy_scaler 2 1>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,<&zip_xy_scaler 2 1>,<&zip_temp_layer 1 10000>;
     };
     
     physical_layout0: physical_layout_0 {
