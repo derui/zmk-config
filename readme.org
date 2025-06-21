@@ -1,0 +1,21 @@
+* derui's zmk-config
+This repository contains configuration sets of ZMK.
+
+
+* building
+
+** Local
+
+*** Setup
+See [[https://zmk.dev/docs/development/local-toolchain/setup/container][Official document]] to setup local toolchain. I recommend to use container approach.
+
+*** make
+When building shield such as *orbit-one* , run command in container:
+
+#+begin_src sh
+  $ west build -d orbit_one -b nice_nano_v2 -- -DSHIELD=orbit_one \
+    -DZMK_CONFIG=/workspace/zmk-config/config \
+    -DZMK_EXTRA_MODULES=/workspace/zmk-config
+#+end_src
+
+
