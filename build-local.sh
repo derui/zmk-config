@@ -21,8 +21,9 @@ fi
 
 west zephyr-export
 
-west build -s zmk/app -p -d build -b nice_nano_v2 -- \
+west build -s zmk/app -p -d build -b nice_nano_v2 -S studio-rpc-usb-uart -- \
      -DSHIELD=orbit_one \
+     -DCONFIG_ZMK_STUDIO=y \
      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \
      -DZMK_CONFIG=$BASE_DIR/config
 

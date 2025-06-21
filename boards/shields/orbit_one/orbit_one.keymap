@@ -22,7 +22,11 @@
 
 // restore layer click mkp key after 250ms
 &mkp_input_listener {
-    input-processors = <&zip_temp_layer 1 250>;
+  input-processors = <&zip_temp_layer 1 250>;
+};
+
+&mmv {
+  time-to-max-speed-ms = <300>;             /* <--- How long time until max speed is reached (default: 500) */
 };
 
 / {

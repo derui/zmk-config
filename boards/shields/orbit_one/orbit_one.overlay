@@ -87,7 +87,7 @@
     glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,<&zip_temp_layer 1 10000>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,<&zip_temp_layer 1 10000>,<&zip_xy_scaler 2 1>;
     };
     
     physical_layout0: physical_layout_0 {
@@ -153,11 +153,11 @@
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
-        dr-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        dr-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH)>;
         status = "okay";
 
-        sensitivity = "1x";
-        sleep;
+        sensitivity = "2x";
+        /* sleep; */
         no-taps;
         rotate-90;
     };
