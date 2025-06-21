@@ -162,8 +162,3 @@
         rotate-90;
     };
 };
-
-// restore layer click mkp key after 250ms
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 1 250>;
-};
