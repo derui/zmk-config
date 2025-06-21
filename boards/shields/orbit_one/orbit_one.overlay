@@ -147,16 +147,16 @@
 };
 
 &i2c0 {
-    compatible = "nordic,nrf-twi";
+    compatible = "nordic,nrf-twim";
     status = "okay";
 
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
-        dr-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH)>,<&pro_micro 2 (GPIO_ACTIVE_LOW)>;
+        dr-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         status = "okay";
 
-        sensitivity = "4x";
+        sensitivity = "1x";
         sleep;
         no-taps;
         rotate-90;
