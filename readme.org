@@ -10,12 +10,10 @@ This repository contains configuration sets of ZMK.
 See [[https://zmk.dev/docs/development/local-toolchain/setup/container][Official document]] to setup local toolchain. I recommend to use container approach.
 
 *** make
-When building shield such as *orbit-one* , run command in container:
+When building shield such as *orbit-one* , run command in container under ~/workspace/zmk-config~:
 
 #+begin_src sh
-  $ west build -d orbit_one -b nice_nano_v2 -- -DSHIELD=orbit_one \
-    -DZMK_CONFIG=/workspace/zmk-config/config \
-    -DZMK_EXTRA_MODULES=/workspace/zmk-config
+  $ build-local.sh
 #+end_src
 
 
