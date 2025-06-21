@@ -132,8 +132,7 @@
 };
 
 &i2c0 {
-    // use twim driver forcibly
-	compatible = "nordic,nrf-twim";
+    compatible = "nordic,nrf-twi";
     status = "okay";
 
     glidepoint: glidepoint@2a {
