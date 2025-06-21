@@ -1,7 +1,10 @@
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
 
