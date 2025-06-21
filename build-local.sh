@@ -26,3 +26,4 @@ west build -s zmk/app -p -d build -b nice_nano_v2 -- \
      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \
      -DZMK_CONFIG=$BASE_DIR/config
 
+mv build/zephyr/zmk.uf2 /workspaces/zmk-config/build-local.uf2
