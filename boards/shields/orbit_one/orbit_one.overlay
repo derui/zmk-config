@@ -76,9 +76,9 @@
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         excluded-positions = <
-            15 // F
-            14 // D
-            12 // A
+            16 // F
+            15 // D
+            13 // A
             18 // J
             19 // K
             21 // ;
