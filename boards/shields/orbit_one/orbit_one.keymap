@@ -22,7 +22,7 @@
 
 // restore layer click mkp key after 250ms
 &mkp_input_listener {
-  input-processors = <&zip_temp_layer 1 250>;
+  input-processors = <&zip_temp_layer MOUSE 250>;
 };
 
 &mmv {
@@ -77,10 +77,10 @@
           toggle-mode = "off";
       };
 
-      lt_hypr: mt_hypr {
+      mt_hypr: mt_hypr {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "LT for HYPR";
-            bindings = <&mo>, <&hypr_on>;
+            display-name = "MT for HYPR";
+            bindings = <&kp>, <&hypr_on>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -105,20 +105,20 @@
 
     qwerty {
       bindings = <
-  &lt ADJT ESC  &kp Q &kp W &kp E           &kp R    &kp T                    &kp Y           &kp U              &kp I     &kp O   &kp P    &kp BSPC
-  &mt LCTRL TAB &kp A &kp S &kp D           &kp F    &kp G                    &kp H           &kp J              &kp K     &kp L   &kp SEMI &kp SQT
-      &kp LSHFT &kp Z &kp X &kp C           &kp V    &kp B                    &kp N           &kp M              &kp COMMA &kp DOT &kp FSLH &kp LALT
-                             &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &lt_hypr RAIS LGUI &mt LGUI LANG1
+  &lt ADJT TAB  &kp Q &kp W &kp E     &kp R          &kp T                    &kp Y           &kp U          &kp I     &kp O   &kp P    &kp BSPC
+  &kp LCTRL     &kp A &kp S &kp D     &kp F          &kp G                    &kp H           &kp J          &kp K     &kp L   &kp SEMI &kp SQT
+  &mt LSHFT ESC &kp Z &kp X &kp C     &kp V          &kp B                    &kp N           &kp M          &kp COMMA &kp DOT &kp FSLH &kp LALT
+                            &kp LALT  &lt LOWR LANG2 &kp SPACE                &mt LSHFT ENTER &lt RAIS LANG1 &mt_hypr LGUI LGUI
       >;
       sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
 
     gallium {
       bindings = <
-  &lt ADJT ESC  &kp B &kp L &kp D          &kp C    &kp V                    &kp J           &kp F              &kp O     &kp U    &kp COMMA &kp BSPC
-  &mt LCTRL TAB &kp N &kp R &kp T          &kp S    &kp G                    &kp Y           &kp H              &kp A     &kp E    &kp I     &kp FSLH
-      &kp LSHFT &kp X &kp Q &kp M          &kp W    &kp Z                    &kp K           &kp P              &kp SQT   &kp SEMI &kp DOT   &kp LALT
-                            &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &lt_hypr RAIS LGUI &mt LGUI LANG1
+  &lt ADJT TAB  &kp B &kp L &kp D     &kp C          &kp V                    &kp J           &kp F           &kp O     &kp U    &kp COMMA &kp BSPC
+  &kp LCTRL     &kp N &kp R &kp T     &kp S          &kp G                    &kp Y           &kp H           &kp A     &kp E    &kp I     &kp FSLH
+  &mt LSHFT ESC &kp X &kp Q &kp M     &kp W          &kp Z                    &kp K           &kp P           &kp SQT   &kp SEMI &kp DOT   &kp LALT
+                            &kp LALT  &lt LOWR LANG2 &kp SPACE                &mt LSHFT ENTER &lt RAIS LANG1  &mt_hypr LGUI LGUI
       >;
 
           sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
