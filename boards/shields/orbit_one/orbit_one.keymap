@@ -31,15 +31,21 @@
 
 / {
   macros {
-      hyprland: hyprland {
+      hypr_on: hyprland_on {
           compatible = "zmk,behavior-macro-one-param";
           #binding-cells = <1>;
           bindings
-              = <&macro_press &mo HYPR>
-              , <&macro_press &kp LGUI>
-              , <&macro_pause_for_release>
-              , <&macro_release &kp LGUI>
-              , <&macro_press &mo HYPR>
+              = <&macro_tap &tog_on HYPR>
+              , <&macro_param_1to1 &macro_tap &sk MACRO_PLACEHOLDER>
+              ;
+      };
+
+      hypr_off: hyprland_off {
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        bindings
+              = <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>
+              , <&macro_tap &tog_off HYPR>
               ;
       };
   };
@@ -57,10 +63,24 @@
           bindings = <&msc>, <&msc>;
       };
 
-      mt_hypr: mt_hypr {
+      tog_on: toggle_layer_on_only {
+          compatible = "zmk,behavior-toggle-layer";
+          #binding-cells = <1>;
+          display-name = "Toggle Layer On";
+          toggle-mode = "on";
+      };
+
+      tog_off: toggle_layer_off_only {
+          compatible = "zmk,behavior-toggle-layer";
+          #binding-cells = <1>;
+          display-name = "Toggle Layer Off";
+          toggle-mode = "off";
+      };
+
+      lt_hypr: mt_hypr {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT for HYPR";
-            bindings = <&mo>, <&hyprland>;
+            display-name = "LT for HYPR";
+            bindings = <&mo>, <&hypr_on>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -95,20 +115,20 @@
     };
     qwerty {
       bindings = <
-  &lt ADJT ESC  &kp Q &kp W &kp E           &kp R    &kp T                    &kp Y           &kp U         &kp I     &kp O   &kp P    &kp BSPC
-  &mt LCTRL TAB &kp A &kp S &kp D           &kp F    &kp G                    &kp H           &kp J         &kp K     &kp L   &kp SEMI &kp SQT
-      &kp LSHFT &kp Z &kp X &kp C           &kp V    &kp B                    &kp N           &kp M         &kp COMMA &kp DOT &kp FSLH &kp LALT
-                             &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &mt_hypr RAIS A &mt LGUI LANG1
+  &lt ADJT ESC  &kp Q &kp W &kp E           &kp R    &kp T                    &kp Y           &kp U              &kp I     &kp O   &kp P    &kp BSPC
+  &mt LCTRL TAB &kp A &kp S &kp D           &kp F    &kp G                    &kp H           &kp J              &kp K     &kp L   &kp SEMI &kp SQT
+      &kp LSHFT &kp Z &kp X &kp C           &kp V    &kp B                    &kp N           &kp M              &kp COMMA &kp DOT &kp FSLH &kp LALT
+                             &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &lt_hypr RAIS LGUI &mt LGUI LANG1
       >;
       sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
 
     gallium {
       bindings = <
-  &lt ADJT ESC  &kp B &kp L &kp D          &kp C    &kp V                    &kp J           &kp F         &kp O     &kp U    &kp COMMA &kp BSPC
-  &mt LCTRL TAB &kp N &kp R &kp T          &kp S    &kp G                    &kp Y           &kp H         &kp A     &kp E    &kp I     &kp FSLH
-      &kp LSHFT &kp X &kp Q &kp M          &kp W    &kp Z                    &kp K           &kp P         &kp SQT   &kp SEMI &kp DOT   &kp LALT
-                            &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &mt_hypr RAIS A &mt LGUI LANG1
+  &lt ADJT ESC  &kp B &kp L &kp D          &kp C    &kp V                    &kp J           &kp F              &kp O     &kp U    &kp COMMA &kp BSPC
+  &mt LCTRL TAB &kp N &kp R &kp T          &kp S    &kp G                    &kp Y           &kp H              &kp A     &kp E    &kp I     &kp FSLH
+      &kp LSHFT &kp X &kp Q &kp M          &kp W    &kp Z                    &kp K           &kp P              &kp SQT   &kp SEMI &kp DOT   &kp LALT
+                            &mt LALT LANG2 &mo LOWR &kp SPACE                &mt LSHFT ENTER &lt_hypr RAIS LGUI &mt LGUI LANG1
       >;
 
           sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
@@ -146,10 +166,10 @@
 
     hypr {
       bindings = <
-  &none         &kp N1   &kp N2   &kp N3  &kp N4   &kp N5        &kp N6    &kp N7    &kp N8 &kp N9  &kp N0   &none
-  &sk LS(LCTRL) &kp A    &kp S    &kp D   &kp F    &kp G         &kp H     &kp J     &kp K  &kp L   &kp SEMI &none
-  &none         &kp Z    &kp LBRC &none   &none    &none         &none     &none     &none  &none   &none    &none
-                                  &none   &none    &sk LSHIFT    &kp ENTER &none     &none
+  &hypr_off ESC &hypr_off N1   &hypr_off N2 &hypr_off N3  &hypr_off N4   &hypr_off N5        &hypr_off N6    &hypr_off N7    &hypr_off N8 &hypr_off N9  &hypr_off N0   &none
+  &sk LCTRL     &hypr_off A    &hypr_off S  &hypr_off D   &hypr_off F    &hypr_off G         &hypr_off H     &hypr_off J     &hypr_off K  &hypr_off L   &hypr_off SEMI &none
+  &none         &hypr_off Z    &hypr_off X  &hypr_off C   &hypr_off V    &hypr_off B         &hypr_off N     &hypr_off M     &none        &none         &none          &none
+                                            &none         &none          &sk LSHIFT          &hypr_off ENTER &none           &none
       >;
 
           sensor-bindings = <&rot_kp PG_UP PG_DN &rot_kp LEFT RIGHT>;
