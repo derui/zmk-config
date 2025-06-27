@@ -19,7 +19,7 @@
 #
 ---
 board: [ "seeeduino_xiao_ble" ]
-shield: [ "orbit_one" ]
+shield: [ "orbit_one_left", "orbit_one_right" ]
 include:
   - board: seeeduino_xiao_ble
     shield: orbit_one
