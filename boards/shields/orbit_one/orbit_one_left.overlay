@@ -1,0 +1,145 @@
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/pointing.h>
+#include "orbit_one.dtsi"
+
+/ {
+
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout0;
+    };
+  
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <4>;
+// | SW6  | SW5  | SW4  | SW3  | SW2  | SW1  |                 | SW1  | SW2  | SW3  | SW4  | SW5  | SW6  |
+// | SW12 | SW11 | SW10 | SW9  | SW8  | SW7  |                 | SW7  | SW8  | SW9  | SW10 | SW11 | SW12 |
+// | SW18 | SW17 | SW16 | SW15 | SW14 | SW13 |                 | SW13 | SW14 | SW15 | SW16 | SW17 | SW18 |
+//                      | SW29 | SW28 | SW27 |                 | SW27 | SW28 | SW29 |
+        map = <
+          RC(9, 0) RC(8,0) RC(7,0) RC(6,0) RC(5,0) RC(4,0)                   RC(0,4) RC(0,5) RC(0,6)  RC(0,7) RC(0,8) RC(0,9)
+          RC(9, 1) RC(8,1) RC(7,1) RC(6,1) RC(5,1) RC(4,1)                   RC(1,4) RC(1,5) RC(1,6)  RC(1,7) RC(1,8) RC(1,9)
+          RC(9, 2) RC(8,2) RC(7,2) RC(6,2) RC(5,2) RC(4,2)                   RC(2,4) RC(2,5) RC(2,6)  RC(2,7) RC(2,8) RC(2,9)
+                                   RC(6,3) RC(5,3) RC(4,3)                   RC(3,4) RC(3,5) RC(3,6)
+        >;
+    };
+
+    kscan0: kscan_charlyplex {
+      compatible = "zmk,kscan-gpio-charlieplex";
+      wakeup-source;
+
+            // row1 -> row4
+      gpios = <&xiao_d 7  (GPIO_ACTIVE_HIGH)>  // 0
+            , <&xiao_d 8  (GPIO_ACTIVE_HIGH)>  // 1
+            , <&xiao_d 9  (GPIO_ACTIVE_HIGH)>   // 2
+            , <&xiao_d 10 (GPIO_ACTIVE_HIGH)>   // 3
+            // col1 -> col3
+            , <&xiao_d 2 (GPIO_ACTIVE_HIGH)>  // 4
+            , <&xiao_d 3 (GPIO_ACTIVE_HIGH)>  // 5
+            , <&xiao_d 6 (GPIO_ACTIVE_HIGH)>  // 6
+            ;
+    };
+
+    // Encoder definitions
+    left_encoder: encoder_left {
+        status = "okay";
+    };
+
+    // auto mouse layer
+    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        excluded-positions = <
+            16 // F
+            15 // D
+            13 // A
+            18 // J
+            19 // K
+            21 // ;
+            12 // Ctrl
+        >;
+    };
+
+    // pointing device
+    glidepoint_listener {
+        compatible = "zmk,input-listener";
+        device = <&glidepoint>;
+        input-processors = <&zip_temp_layer 7 10000>;
+
+        mouse_layer {
+          layers = <7>;
+
+          input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,<&zip_xy_scaler 2 1>;
+        };
+    };
+    
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+
+        kscan = <&kscan0>;
+        transform = <&default_transform>;
+
+    keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0   50       0     0     0>
+            , <&key_physical_attrs 100 100  100   37       0     0     0>
+            , <&key_physical_attrs 100 100  200   12       0     0     0>
+            , <&key_physical_attrs 100 100  300    0       0     0     0>
+            , <&key_physical_attrs 100 100  400   12       0     0     0>
+            , <&key_physical_attrs 100 100  500   25       0     0     0>
+            , <&key_physical_attrs 100 100 1050   25       0     0     0>
+            , <&key_physical_attrs 100 100 1150   12       0     0     0>
+            , <&key_physical_attrs 100 100 1250    0       0     0     0>
+            , <&key_physical_attrs 100 100 1350   12       0     0     0>
+            , <&key_physical_attrs 100 100 1450   37       0     0     0>
+            , <&key_physical_attrs 100 100 1550   50       0     0     0>
+            , <&key_physical_attrs 100 100    0  150       0     0     0>
+            , <&key_physical_attrs 100 100  100  137       0     0     0>
+            , <&key_physical_attrs 100 100  200  112       0     0     0>
+            , <&key_physical_attrs 100 100  300  100       0     0     0>
+            , <&key_physical_attrs 100 100  400  112       0     0     0>
+            , <&key_physical_attrs 100 100  500  125       0     0     0>
+            , <&key_physical_attrs 100 100 1050  125       0     0     0>
+            , <&key_physical_attrs 100 100 1150  112       0     0     0>
+            , <&key_physical_attrs 100 100 1250  100       0     0     0>
+            , <&key_physical_attrs 100 100 1350  112       0     0     0>
+            , <&key_physical_attrs 100 100 1450  137       0     0     0>
+            , <&key_physical_attrs 100 100 1550  150       0     0     0>
+            , <&key_physical_attrs 100 100    0  250       0     0     0>
+            , <&key_physical_attrs 100 100  100  237       0     0     0>
+            , <&key_physical_attrs 100 100  200  212       0     0     0>
+            , <&key_physical_attrs 100 100  300  200       0     0     0>
+            , <&key_physical_attrs 100 100  400  212       0     0     0>
+            , <&key_physical_attrs 100 100  500  225       0     0     0>
+            , <&key_physical_attrs 100 100 1050  225       0     0     0>
+            , <&key_physical_attrs 100 100 1150  212       0     0     0>
+            , <&key_physical_attrs 100 100 1250  200       0     0     0>
+            , <&key_physical_attrs 100 100 1350  212       0     0     0>
+            , <&key_physical_attrs 100 100 1450  237       0     0     0>
+            , <&key_physical_attrs 100 100 1550  250       0     0     0>
+            , <&key_physical_attrs 100 100  250  312       0     0     0>
+            , <&key_physical_attrs 100 100  350  315       0     0     0>
+            , <&key_physical_attrs 100 100  450  325       0     0     0>
+            , <&key_physical_attrs 100 150  575  300    3000   625   375>
+            , <&key_physical_attrs 100 150  975  300 (-3000)  1025   375>
+            , <&key_physical_attrs 100 100 1100  325       0     0     0>
+            , <&key_physical_attrs 100 100 1200  315       0     0     0>
+            , <&key_physical_attrs 100 100 1300  315       0     0     0>
+            ;
+    };
+};
+
+&i2c0 {
+    status = "okay";
+
+    glidepoint: glidepoint@2a {
+        status = "okay";
+    };
+};
+
