@@ -9,3 +9,6 @@ features:
   - keys
   - pointer
   - encoder
+siblings:
+  - orbit_one_left
+  - orbit_one_right
