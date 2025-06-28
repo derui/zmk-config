@@ -3,14 +3,10 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/japanese_input.dtsi>
 
@@ -161,7 +157,7 @@
     adjust {
       bindings = <
   &trans         &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR      &to QWER &to GALI &trans &tog_off JAPN &tog_on JAPN &bootloader
-  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans          &trans   &trans   &trans &trans        &trans       &ext_power EP_TOG
+  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans          &trans   &trans   &trans &trans        &trans       &trans
   &trans         &trans       &trans       &trans       &trans       &trans          &trans   &trans   &trans &trans        &trans       &trans
                                            &out OUT_TOG &trans       &trans          &trans   &trans   &trans
       >;
