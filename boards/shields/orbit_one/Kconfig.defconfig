@@ -21,6 +21,12 @@ config ZMK_POINTING_SMOOTH_SCROLLING
 
 endif
 
+if SHILD_ORBET_ON_RIGHT
+# Do not sleep to avoid connction issue
+config ZMK_SLEEP
+    default n
+endif
+
 if SHIELD_ORBIT_ONE_LEFT || SHIELD_ORBIT_ONE_RIGHT
 
 config ZMK_SPLIT
