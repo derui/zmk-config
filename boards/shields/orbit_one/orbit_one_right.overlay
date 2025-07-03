@@ -1,7 +1,7 @@
 #include "orbit_one.dtsi"
 
 &default_transform {
-  col-offset = <6>;
+  row-offset = <6>;
 };
 
 &right_encoder {

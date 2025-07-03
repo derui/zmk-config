@@ -20,10 +20,10 @@
 // | SW18 | SW17 | SW16 | SW15 | SW14 | SW13 |                 | SW13 | SW14 | SW15 | SW16 | SW17 | SW18 |
 //                      | SW29 | SW28 | SW27 |                 | SW27 | SW28 | SW29 |
         map = <
-          RC(0,6) RC(0,5) RC(0,4) RC(6,0) RC(5,0) RC(4,0)                   RC(4,0) RC(5,0) RC(6,0) RC(0,4) RC(0,5) RC(0,6)
-          RC(1,6) RC(1,5) RC(1,4) RC(6,1) RC(5,1) RC(4,1)                   RC(4,1) RC(5,1) RC(6,1) RC(1,4) RC(1,5) RC(1,6)
-          RC(2,6) RC(2,5) RC(2,4) RC(6,2) RC(5,2) RC(4,2)                   RC(4,2) RC(5,2) RC(6,2) RC(2,4) RC(2,5) RC(2,6)
-                                  RC(6,3) RC(5,3) RC(4,3)                   RC(4,3) RC(5,3) RC(6,3)
+          RC(0,6) RC(0,5) RC(0,4) RC(6,0) RC(5,0) RC(4,0)                   RC(6,4) RC(6,5) RC(6,6) RC(10,0) RC(11,0) RC(12,0)
+          RC(1,6) RC(1,5) RC(1,4) RC(6,1) RC(5,1) RC(4,1)                   RC(7,4) RC(7,5) RC(7,6) RC(10,1) RC(11,1) RC(12,1)
+          RC(2,6) RC(2,5) RC(2,4) RC(6,2) RC(5,2) RC(4,2)                   RC(8,4) RC(8,5) RC(8,6) RC(10,2) RC(11,2) RC(12,2)
+                                  RC(6,3) RC(5,3) RC(4,3)                   RC(9,4) RC(9,5) RC(9,6)
         >;
     };
 
@@ -33,10 +33,10 @@
 
       // each hands use same GPIOs to map
             // row1 -> row4
-      gpios = <&xiao_d 7  (GPIO_ACTIVE_HIGH)>  // 0
-            , <&xiao_d 8  (GPIO_ACTIVE_HIGH)>  // 1
-            , <&xiao_d 9  (GPIO_ACTIVE_HIGH)>   // 2
-            , <&xiao_d 10 (GPIO_ACTIVE_HIGH)>   // 3
+      gpios = <&xiao_d 10  (GPIO_ACTIVE_HIGH)>  // 0
+            , <&xiao_d 9  (GPIO_ACTIVE_HIGH)>  // 1
+            , <&xiao_d 8  (GPIO_ACTIVE_HIGH)>   // 2
+            , <&xiao_d 7 (GPIO_ACTIVE_HIGH)>   // 3
             // col1 -> col3
             , <&xiao_d 2 (GPIO_ACTIVE_HIGH)>  // 4
             , <&xiao_d 3 (GPIO_ACTIVE_HIGH)>  // 5
