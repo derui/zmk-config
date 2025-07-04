@@ -27,6 +27,12 @@ west build -s zmk/app -p -d build -b seeeduino_xiao_ble -S studio-rpc-usb-uart -
      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \
      -DZMK_CONFIG=$BASE_DIR/config
 
+# west build -s zmk/app -p -d build -b seeeduino_xiao_ble -S zmk-usb-logging -- \
+#      -DSHIELD=orbit_one_left \
+#      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \
+#      -DZMK_CONFIG=$BASE_DIR/config
+
+
 mv build/zephyr/zmk.uf2 /workspaces/zmk-config/left.uf2
 
 west build -s zmk/app -p -d build -b seeeduino_xiao_ble -- \

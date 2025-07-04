@@ -10,14 +10,15 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/japanese_input.dtsi>
 
-#define QWER 1
-#define GALI 2
-#define JAPN 3
-#define LOWR 4
-#define RAIS 5
-#define ADJT 6
-#define HYPR 8
-#define MOUSE 7
+#define MAC 1
+#define QWER 2
+#define GALI 3
+#define JAPN 4
+#define LOWR 5
+#define RAIS 6
+#define ADJT 7
+#define HYPR 9
+#define MOUSE 8
 
 // restore layer click mkp key after 250ms
 &mkp_input_listener {
@@ -96,7 +97,17 @@
   &lt ADJT ESC   &to QWER &to GALI &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none          &none    &none    &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none          &none    &none    &none     &none    &none                     &none    &none    &none     &none   &none    &none
-                                   &none     &none    &none                     &none    &none    &none
+                                &kp LALT     &none    &none                     &none    &none    &mt_hypr LGUI 0
+      >;
+
+        sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
+    };
+    mac {
+      bindings = <
+  &none   &none    &none &none     &none    &none                     &none    &none    &none     &none   &none    &none
+  &none   &none    &none &none     &none    &none                     &none    &none    &none     &none   &none    &none
+  &none   &none    &none &none     &none    &none                     &none    &none    &none     &none   &none    &none
+                         &kp LGUI  &none    &none                     &none    &none    &kp LALT
       >;
 
         sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
@@ -107,7 +118,7 @@
   &lt ADJT TAB  &kp Q &kp W &kp E     &kp R          &kp T                    &kp Y           &kp U          &kp I     &kp O   &kp P    &kp BSPC
   &kp LCTRL     &kp A &kp S &kp D     &kp F          &kp G                    &kp H           &kp J          &kp K     &kp L   &kp SEMI &kp SQT
   &mt LSHFT ESC &kp Z &kp X &kp C     &kp V          &kp B                    &kp N           &kp M          &kp COMMA &kp DOT &kp FSLH &kp LALT
-                            &kp LALT  &lt LOWR LANG2 &kp SPACE                &mt LSHFT ENTER &lt RAIS LANG1 &mt_hypr LGUI 0
+                            &trans    &lt LOWR LANG2 &kp SPACE                &mt LSHFT ENTER &lt RAIS LANG1 &trans
       >;
       sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
@@ -117,7 +128,7 @@
   &lt ADJT TAB  &kp B &kp L &kp D     &kp C          &kp V                    &kp J           &kp F           &kp O     &kp U    &kp COMMA &kp BSPC
   &kp LCTRL     &kp N &kp R &kp T     &kp S          &kp G                    &kp Y           &kp H           &kp A     &kp E    &kp I     &kp FSLH
   &mt LSHFT ESC &kp X &kp Q &kp M     &kp W          &kp Z                    &kp K           &kp P           &kp SQT   &kp SEMI &kp DOT   &kp LALT
-                            &kp LALT  &lt LOWR LANG2 &kp SPACE                &mt LSHFT ENTER &lt RAIS LANG1  &mt_hypr LGUI 0
+                            &trans  &lt LOWR LANG2 &kp SPACE                &mt LSHFT ENTER &lt RAIS LANG1  &trans
       >;
 
           sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
@@ -128,7 +139,7 @@
   &lt ADJT TAB  &jp Q &jp W &jp E     &jp R          &jp T                    &jp Y     &jp U          &jp I     &jp O   &jp P    &kp BSPC
   &kp LCTRL     &jp A &jp S &jp D     &jp F          &jp G                    &jp H     &jp J          &jp K     &jp L   &jp SEMI &kp SQT
   &mt LSHFT ESC &jp Z &jp X &jp C     &jp V          &jp B                    &jp N     &jp M          &jp COMMA &jp DOT &jp FSLH &kp LALT
-                            &jp LALT  &lt LOWR LANG2 &jp SPACE                &jp ENTER &lt RAIS LANG1 &mt_hypr LGUI 0
+                            &trans    &lt LOWR LANG2 &jp SPACE                &jp ENTER &lt RAIS LANG1 &trans
       >;
       sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
@@ -157,7 +168,7 @@
     adjust {
       bindings = <
   &trans         &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR      &to QWER &to GALI &trans &tog_off JAPN &tog_on JAPN &bootloader
-  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans          &trans   &trans   &trans &trans        &trans       &trans
+  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans          &trans   &trans   &trans &tog_off MAC  &tog_on MAC  &trans
   &trans         &trans       &trans       &trans       &trans       &trans          &trans   &trans   &trans &trans        &trans       &trans
                                            &out OUT_TOG &trans       &trans          &trans   &trans   &trans
       >;
