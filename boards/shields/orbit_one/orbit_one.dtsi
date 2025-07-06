@@ -1,3 +1,5 @@
+#define ZMK_MOUSE_SCRL_VAL 140
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -49,7 +51,7 @@
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
+        steps = <72>;
         status = "disabled";
     };
 
@@ -57,7 +59,7 @@
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
+        steps = <72>;
         status = "disabled";
     };
 
@@ -140,16 +142,6 @@
 
 &i2c0 {
     compatible = "nordic,nrf-twim";
-
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        dr-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "2x";
-        /* sleep; */
-        no-taps;
-        rotate-90;
-    };
+    status = "disabled";
 };
 

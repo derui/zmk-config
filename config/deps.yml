@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/derui
   projects:
     - name: cirque-input-module
-      remote: petejohanson
-      revision: main
+      remote: derui
+      revision: feature/round-scroll
     - name: zmk-japanese-input
       remote: derui
       revision: main
