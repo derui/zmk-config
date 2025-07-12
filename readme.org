@@ -9,6 +9,17 @@ This repository contains configuration sets of ZMK.
 *** Setup
 See [[https://zmk.dev/docs/development/local-toolchain/setup/container][Official document]] to setup local toolchain. I recommend to use container approach.
 
+**** Launch podman sample
+
+#+begin_src sh
+   podman run -it --rm \
+          --security-opt label=disable \
+          --workdir /workspaces/zmk-config \
+          -v (pwd):/workspaces/zmk-config \
+        -p 3000:3000 \
+          zmk-build /bin/bash
+#+end_src
+
 *** make
 When building shield such as *orbit-one* , run command in container under ~/workspace/zmk-config~:
 
