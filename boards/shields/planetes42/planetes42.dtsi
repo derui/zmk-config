@@ -82,6 +82,12 @@
             12 // Ctrl
         >;
     };
+
+    // comment out if you decided to use wireless split
+    wired_split {
+        compatible = "zmk,wired-split";
+        device = <&xiao_serial>;
+    };
     
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
@@ -142,5 +148,15 @@
 &i2c0 {
     compatible = "nordic,nrf-twim";
     status = "disabled";
+};
+
+&spi0 {
+    compatible = "nordic,nrf-twim";
+    status = "disabled";
+};
+
+// comment out this node if use wireless spilt
+&xiao_serial {
+  status = "okay";
 };
 

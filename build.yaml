@@ -19,7 +19,7 @@
 #
 ---
 board: [ "seeeduino_xiao_ble" ]
-shield: [ "orbit_one_left", "orbit_one_right" ]
+shield: [ "orbit_one_left", "orbit_one_right", "planetes42_left", "planetes42_right" ]
 include:
   - board: seeeduino_xiao_ble
     shield: orbit_one_left
@@ -28,4 +28,12 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: seeeduino_xiao_ble
     shield: orbit_one_right
+    # snippet: zmk-usb-logging
+  - board: seeeduino_xiao_ble
+    shield: planetes42_left
+    # snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: seeeduino_xiao_ble
+    shield: planetes42_right nice_view
     # snippet: zmk-usb-logging
