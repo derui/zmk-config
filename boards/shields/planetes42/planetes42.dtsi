@@ -7,7 +7,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
@@ -33,7 +32,7 @@
       compatible = "zmk,kscan-gpio-charlieplex";
       wakeup-source;
 
-      interrupt-gpio = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+      interrupt-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
       
       // each hands use same GPIOs to map
       gpios = <&xiao_d 4  (GPIO_ACTIVE_HIGH)>  // 0
@@ -150,13 +149,7 @@
     status = "disabled";
 };
 
-&spi0 {
-    compatible = "nordic,nrf-twim";
-    status = "disabled";
-};
-
 // comment out this node if use wireless spilt
 &xiao_serial {
   status = "okay";
 };
-
