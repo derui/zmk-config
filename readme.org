@@ -21,7 +21,7 @@ See [[https://zmk.dev/docs/development/local-toolchain/setup/container][Official
 #+end_src
 
 *** make
-When building shield such as *orbit-one* , run command in container under ~/workspace/zmk-config~:
+When building shield such as *orbit-one* or *planetes42* , run command in container under ~/workspace/zmk-config~:
 
 #+begin_src sh
   $ build-local.sh

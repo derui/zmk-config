@@ -1,9 +1,9 @@
 file_format: "1"
 id: planetes42
-name: Orbit One
+name: planetes42
 type: shield
-url: https://github.com/derui/orbit-one
-requires: [pro_micro]
+url: https://github.com/derui/planetes42
+requires: [xiao_ble]
 exposes: [i2c_glidepoint]
 features:
   - keys

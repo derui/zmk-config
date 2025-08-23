@@ -1,8 +1,8 @@
 #include "planetes42.dtsi"
-#define MOUSE 9
+#define MOUSE 8
 
 / {
-     // pointing device
+    // pointing device
     glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
@@ -41,7 +41,7 @@
     };
 };
 
-&spi0 {
+&spi2 {
   status = "disabled";
 };
 

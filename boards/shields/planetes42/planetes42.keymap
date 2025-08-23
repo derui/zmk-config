@@ -15,13 +15,12 @@
 #define MAC 1
 #define QWER 2
 #define GALI 3
-#define FOCAL 4
-#define JAPN 5
-#define LOWR 6
-#define RAIS 7
-#define ADJT 8
-#define HYPR 10
-#define MOUSE 9
+#define JAPN 4
+#define LOWR 5
+#define RAIS 6
+#define ADJT 7
+#define HYPR 9
+#define MOUSE 8
 
 // restore layer click mkp key after 250ms
 &mkp_input_listener {
@@ -107,7 +106,7 @@
 
     default_layer {
       bindings = <
-  &lt ADJT ESC   &to QWER &to GALI &to FOCAL &none    &none                     &none    &none    &none     &none   &none    &none
+  &lt ADJT ESC   &to QWER &to GALI &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none          &none    &none    &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none          &none    &none    &none     &none    &none                     &none    &none    &none     &none   &none    &none
                                 &kp LALT     &none    &none                     &none    &none    &mt_hypr LGUI 0
@@ -147,17 +146,6 @@
           sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
     };
 
-    focal {
-      bindings = <
-  &lt ADJT TAB  &kp V &kp L &kp H     &kp G          &kp K                    &kp Q           &kp F           &kp O     &kp U    &kp J     &kp BSPC
-  &kp LCTRL     &kp S &kp R &kp N     &kp T          &kp B                    &kp Y           &kp C           &kp A     &kp E    &kp I     &kp FSLH
-  &mt LSHFT ESC &kp Z &kp X &kp M     &kp D          &kp P                    &kp SQT         &kp W           &kp DOT   &kp SEMI &kp COMMA &kp LALT
-                            &trans  &lt LOWR LANG2 &kp SPACE                &mt LSHFT ENTER &lt RAIS LANG1  &trans
-      >;
-
-          sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
-    };
-
     japanese {
       bindings = <
   &lt ADJT TAB  &jp Q &jp W &jp E     &jp R          &jp T                    &jp Y     &jp U          &jp I     &jp O   &jp P    &kp BSPC
@@ -191,10 +179,10 @@
 
     adjust {
       bindings = <
-  &trans         &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR      &to QWER &to GALI &to FOCAL &tog_off JAPN &tog_on JAPN &bootloader
-  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans          &trans   &trans   &trans    &tog_off MAC  &tog_on MAC  &trans
-  &trans         &trans       &trans       &trans       &trans       &trans          &trans   &trans   &trans    &trans        &trans       &trans
-                                           &out OUT_TOG &trans       &trans          &trans   &trans   &trans
+  &trans         &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR      &to QWER &to GALI &trans  &tog_off JAPN &tog_on JAPN &bootloader
+  &studio_unlock &bt BT_NXT   &bt BT_PRV   &trans       &trans       &trans          &trans   &trans   &trans  &tog_off MAC  &tog_on MAC  &trans
+  &out OUT_TOG   &trans       &trans       &trans       &trans       &trans          &trans   &trans   &trans  &trans        &trans       &trans
+                                           &trans       &trans       &trans          &trans   &trans   &trans
       >;
     };
 

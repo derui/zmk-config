@@ -5,7 +5,7 @@ if SHIELD_PLANETES42_LEFT
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "Orbit One"
+    default "Planetes42"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -31,5 +31,11 @@ config ZMK_SPLIT
 
 config EC11
   default y
+
+config ZMK_SPLIT_BLE
+   default y
+
+config PM_DEVICE
+   default y
 
 endif

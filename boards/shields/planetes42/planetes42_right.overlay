@@ -2,11 +2,13 @@
 
 &default_transform {
   row-offset = <6>;
+  col-offset = <6>;
 };
 
 &kscan0 {
+
+  interrupt-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
   
-  // each hands use same GPIOs to map
   gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH)>  // 0
         , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>  // 1
         , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>  // 2
@@ -18,16 +20,12 @@
   status = "okay";
 };
 
-&spi0 {
+&spi2 {
   status = "okay";
-  compatible = "nordic,nrf-spim";
-  pinctrl-0 = <&spi2_default>;
-  pinctrl-1 = <&spi2_sleep>;
-  pinctrl-names = "default", "sleep";
 
   cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 };
 
-nice_view_spi: &spi0 {
+nice_view_spi: &spi2 {
   status = "okay";
 };
