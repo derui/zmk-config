@@ -36,7 +36,8 @@ west build -s zmk/app -p -d build -b seeeduino_xiao_ble \
 
 mv build/zephyr/zmk.uf2 /workspaces/zmk-config/left.uf2
 
-west build -s zmk/app -p -d build -b seeeduino_xiao_ble -- \
+west build -s zmk/app -p -d build -b seeeduino_xiao_ble \
+     -- \
      -DSHIELD="planetes42_right nice_view" \
      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \
      -DZMK_CONFIG=$BASE_DIR/config

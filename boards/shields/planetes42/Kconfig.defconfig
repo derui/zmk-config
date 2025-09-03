@@ -35,7 +35,4 @@ config EC11
 config ZMK_SPLIT_BLE
    default y
 
-config PM_DEVICE
-   default y
-
 endif

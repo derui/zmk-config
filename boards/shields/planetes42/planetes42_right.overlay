@@ -1,8 +1,7 @@
 #include "planetes42.dtsi"
 
 &default_transform {
-  row-offset = <6>;
-  col-offset = <6>;
+  row-offset = <7>;
 };
 
 &kscan0 {
@@ -12,7 +11,10 @@
   gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH)>  // 0
         , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>  // 1
         , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>  // 2
-        , <&gpio0 9  (GPIO_ACTIVE_HIGH)>  // 3
+        , <&xiao_d 6 (GPIO_ACTIVE_HIGH)>  // 3
+        , <&gpio0 9  (GPIO_ACTIVE_HIGH)>  // 4
+        , <&xiao_d 7  (GPIO_ACTIVE_HIGH)>  // 5
+        , <&xiao_d 9  (GPIO_ACTIVE_HIGH)>  // 6
         ;
 };
 
