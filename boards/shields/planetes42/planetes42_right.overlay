@@ -6,7 +6,7 @@
 
 &kscan0 {
 
-  interrupt-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+//  interrupt-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
   
   gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH)>  // 0
         , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>  // 1
@@ -25,7 +25,7 @@
 &spi2 {
   status = "okay";
 
-  cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+  cs-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
 nice_view_spi: &spi2 {
