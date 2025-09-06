@@ -29,7 +29,7 @@
         reg = <0x2a>;
         dr-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "2x";
+        sensitivity = "1x";
         /* sleep; */
         no-taps;
         rotate-90;
@@ -38,6 +38,7 @@
         absolute-mode;
         rounding-scroll;
         rounding-scroll-sensitivity = <15>;
+        acceleration;
     };
 };
 

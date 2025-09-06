@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: cirque-input-module
       remote: derui
-      revision: feature/round-scroll
+      revision: feature/acceleration
     - name: zmk-japanese-input
       remote: derui
       revision: main
