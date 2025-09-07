@@ -29,7 +29,7 @@
         reg = <0x2a>;
         dr-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "1x";
+        sensitivity = "3x";
         /* sleep; */
         no-taps;
         rotate-90;
