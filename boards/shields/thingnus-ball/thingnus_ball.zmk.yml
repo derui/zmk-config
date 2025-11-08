@@ -1,14 +1,14 @@
 file_format: "1"
-id: planetes42
-name: planetes42
+id: thingnus_ball
+name: ThingnusBall
 type: shield
-url: https://github.com/derui/planetes42
+url: https://github.com/derui/ThingnusBall
 requires: [xiao_ble]
-exposes: [i2c_glidepoint]
+exposes: []
 features:
   - keys
   - pointer
   - encoder
 siblings:
-  - planetes42_left
-  - planetes42_right
+  - thingnus_ball_left
+  - thingnus_ball_right

@@ -1,7 +1,7 @@
 # Copyright (c) 2021-2025 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_THINGNUS_BALL_LEFT
+if SHIELD_THINGNUS_BALL_RIGHT
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
@@ -18,7 +18,7 @@ config ZMK_POINTING
 
 endif
 
-if SHILD_THINGNUS_BALL_RIGHT
+if SHILD_THINGNUS_BALL_LEFT
 # Do not sleep to avoid connction issue
 config ZMK_SLEEP
     default n

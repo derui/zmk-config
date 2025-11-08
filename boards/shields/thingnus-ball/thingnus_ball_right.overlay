@@ -4,30 +4,75 @@
   row-offset = <7>;
 };
 
+/ {
+    // pointing device
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+
+        scroller {
+            layers = <1>;
+            input-processors =
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
+                <&zip_scroll_scaler 1 40>;
+            process-next;
+        };
+    };
+};
+
 &kscan0 {
 
-//  interrupt-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+  interrupt-gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
   
-  gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH)>  // 0
-        , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>  // 1
-        , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>  // 2
-        , <&xiao_d 6 (GPIO_ACTIVE_HIGH)>  // 3
-        , <&gpio0 9  (GPIO_ACTIVE_HIGH)>  // 4
+  gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH)>  // 0
+        , <&xiao_d 1 (GPIO_ACTIVE_HIGH)>  // 1
+        , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>  // 2
+        , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>  // 3
+        , <&xiao_d 6 (GPIO_ACTIVE_HIGH)>  // 4
         , <&xiao_d 7  (GPIO_ACTIVE_HIGH)>  // 5
-        , <&xiao_d 9  (GPIO_ACTIVE_HIGH)>  // 6
+        , <&gpio0 10  (GPIO_ACTIVE_HIGH)>  // 6
         ;
 };
 
-&right_encoder {
-  status = "okay";
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>, //SCLK
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>, //SDIO
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>; //SDIO
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>, //SCLK
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>, //SDIO
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>; //SDIO
+            low-power-enable;
+        };
+    };
 };
 
-&spi2 {
-  status = "okay";
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; //NCS
 
-  cs-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
-};
-
-nice_view_spi: &spi2 {
-  status = "okay";
+    trackball: trackball@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&xiao_d 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //MOT
+        cpi = <1200>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+    };
 };

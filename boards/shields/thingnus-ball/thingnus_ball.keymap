@@ -170,7 +170,7 @@
   &mt LSHFT ESC &kp Z &kp X &kp C     &kp V          &kp B                    &kp N           &kp M              &kp COMMA &kp DOT &kp FSLH &kp LALT
                             &trans    &lt_lang2 LOWR 0 &kp SPACE                &mt LSHFT ENTER &lt_lang1 RAIS 0 &trans
       >;
-      sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
+      sensor-bindings = <&rot_kp UP DOWN>;
     };
 
     gallium {
@@ -181,7 +181,7 @@
                             &trans  &lt_lang2 LOWR 0 &kp SPACE                &mt LSHFT ENTER &lt_lang1 RAIS 0  &trans
       >;
 
-          sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
+          sensor-bindings = <&rot_kp UP DOWN>;
     };
 
     japanese {
@@ -191,7 +191,7 @@
   &mt LSHFT ESC &jp Z X &jp X Q &jp C M   &jp V W          &jp B Z                  &jp N K         &jp M P          &jp COMMA SQT &jp DOT SEMI &jp FSLH DOT &kp LALT
                                 &trans    &lt_lang2 LOWR 0 &jp SPACE SPACE          &jp ENTER ENTER &lt_lang1 RAIS 0 &trans
       >;
-      sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
+      sensor-bindings = <&rot_kp UP DOWN>;
     };
 
     lower {
@@ -202,7 +202,7 @@
                                &trans   &trans   &trans           &trans   &trans   &trans
       >;
 
-          sensor-bindings = <&rot_kp UP DOWN &rot_kp HOME END>;
+          sensor-bindings = <&rot_kp UP DOWN>;
     };
     raise {
       bindings = <
@@ -212,7 +212,7 @@
                                  &trans &trans     &trans         &trans     &trans    &trans
       >;
 
-          sensor-bindings = <&rot_kp PG_UP PG_DN &rot_kp LEFT RIGHT>;
+          sensor-bindings = <&rot_kp PG_UP PG_DN>;
     };
 
     adjust {
@@ -232,7 +232,7 @@
                                &none     &none     &none                     &none    &none     &none
       >;
 
-        sensor-bindings = <&rot_msc SCRL_UP SCRL_DOWN &rot_msc SCRL_LEFT SCRL_RIGHT>;
+        sensor-bindings = <&rot_msc SCRL_UP SCRL_DOWN>;
     };
 
     hypr {
@@ -243,7 +243,7 @@
                                             &none         &none          &sk LSHIFT          &hypr_off ENTER &none           &none
       >;
 
-          sensor-bindings = <&rot_kp PG_UP PG_DN &rot_kp LEFT RIGHT>;
+          sensor-bindings = <&rot_kp PG_UP PG_DN>;
     };
 
   };
