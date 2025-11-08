@@ -37,3 +37,16 @@ include:
   - board: seeeduino_xiao_ble
     shield: planetes42_right
     # snippet: zmk-usb-logging
+
+---
+board: [ "seeeduino_xiao_ble" ]
+shield: [ "thingnus_ball_left", "thingnus_ball_right" ]
+include:
+  - board: seeeduino_xiao_ble
+    shield: thingnus_ball_left
+    # snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: seeeduino_xiao_ble
+    shield: thingnus_ball_right
+    # snippet: zmk-usb-logging

@@ -1,0 +1,33 @@
+#include "planetes42.dtsi"
+
+&default_transform {
+  row-offset = <7>;
+};
+
+&kscan0 {
+
+//  interrupt-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+  
+  gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH)>  // 0
+        , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>  // 1
+        , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>  // 2
+        , <&xiao_d 6 (GPIO_ACTIVE_HIGH)>  // 3
+        , <&gpio0 9  (GPIO_ACTIVE_HIGH)>  // 4
+        , <&xiao_d 7  (GPIO_ACTIVE_HIGH)>  // 5
+        , <&xiao_d 9  (GPIO_ACTIVE_HIGH)>  // 6
+        ;
+};
+
+&right_encoder {
+  status = "okay";
+};
+
+&spi2 {
+  status = "okay";
+
+  cs-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
+};
+
+nice_view_spi: &spi2 {
+  status = "okay";
+};

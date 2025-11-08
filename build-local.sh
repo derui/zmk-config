@@ -28,7 +28,6 @@ west zephyr-export
 #      -DZMK_CONFIG=$BASE_DIR/config
 
 west build -s zmk/app -p -d build -b seeeduino_xiao_ble \
-     -S zmk-usb-logging \
      -- \
      -DSHIELD="planetes42_left" \
      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \

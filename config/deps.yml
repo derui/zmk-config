@@ -4,10 +4,20 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: derui
       url-base: https://github.com/derui
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: cirque-input-module
       remote: derui
       revision: fix/rounding-start-whole-edge
     - name: zmk-japanese-input
       remote: derui
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
+    - name: zmk-pmw3610-driver
+      remote: badjeff
       revision: main

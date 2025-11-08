@@ -1,0 +1,38 @@
+# Copyright (c) 2021-2025 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_THINGNUS_BALL_LEFT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "ThingnusBall"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config SPI
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif
+
+if SHILD_THINGNUS_BALL_RIGHT
+# Do not sleep to avoid connction issue
+config ZMK_SLEEP
+    default n
+endif
+
+if SHIELD_THINGNUS_BALL_LEFT || SHIELD_THINGNUS_BALL_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config EC11
+  default y
+
+config ZMK_SPLIT_BLE
+   default y
+
+endif

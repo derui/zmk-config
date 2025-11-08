@@ -1,0 +1,14 @@
+file_format: "1"
+id: planetes42
+name: planetes42
+type: shield
+url: https://github.com/derui/planetes42
+requires: [xiao_ble]
+exposes: [i2c_glidepoint]
+features:
+  - keys
+  - pointer
+  - encoder
+siblings:
+  - planetes42_left
+  - planetes42_right
