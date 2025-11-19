@@ -10,27 +10,37 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config INPUT
+    bool
+    default y
+
+config PMW3610
+    bool
+    default y
+
 config SPI
+    bool
     default y
 
 config ZMK_POINTING
+    bool
     default y
-
 endif
 
 if SHILD_THINGNUS_BALL_LEFT
 # Do not sleep to avoid connction issue
 config ZMK_SLEEP
     default n
+
+config EC11
+  default y
+
 endif
 
 if SHIELD_THINGNUS_BALL_LEFT || SHIELD_THINGNUS_BALL_RIGHT
 
 config ZMK_SPLIT
     default y
-
-config EC11
-  default y
 
 config ZMK_SPLIT_BLE
    default y

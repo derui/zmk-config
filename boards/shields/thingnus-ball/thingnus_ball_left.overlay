@@ -1,6 +1,6 @@
-#include "planetes42.dtsi"
+#include "thingnus_ball.dtsi"
 #define MOUSE 8
 
 &left_encoder {
     status = "okay";
-}
+};

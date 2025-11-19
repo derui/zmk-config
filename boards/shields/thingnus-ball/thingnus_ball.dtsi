@@ -80,11 +80,6 @@
     //};
 };
 
-&i2c0 {
-    compatible = "nordic,nrf-twim";
-    status = "disabled";
-};
-
 // comment in this node if use wireless spilt
 //&xiao_serial {
 //  status = "okay";

@@ -150,7 +150,7 @@
                                 &kp LALT     &none    &none                     &none    &none    &mt_hypr LGUI 0
       >;
 
-        sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
+        sensor-bindings = <&rot_kp UP DOWN>;
     };
     mac {
       bindings = <
@@ -160,7 +160,7 @@
                          &kp LGUI  &none    &none                     &none    &none    &kp LALT
       >;
 
-        sensor-bindings = <&rot_kp UP DOWN &rot_kp LEFT RIGHT>;
+        sensor-bindings = <&rot_kp UP DOWN>;
     };
 
     qwerty {

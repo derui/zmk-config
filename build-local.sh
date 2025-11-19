@@ -29,7 +29,7 @@ west zephyr-export
 
 west build -s zmk/app -p -d build -b seeeduino_xiao_ble \
      -- \
-     -DSHIELD="planetes42_left" \
+     -DSHIELD="thingnus_ball_left rgbled_adapter" \
      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \
      -DZMK_CONFIG=$BASE_DIR/config
 
@@ -37,7 +37,7 @@ mv build/zephyr/zmk.uf2 /workspaces/zmk-config/left.uf2
 
 west build -s zmk/app -p -d build -b seeeduino_xiao_ble \
      -- \
-     -DSHIELD="planetes42_right nice_view" \
+     -DSHIELD="thingnus_ball_right rgbled_adapter" \
      -DZMK_EXTRA_MODULES='/workspaces/zmk-config' \
      -DZMK_CONFIG=$BASE_DIR/config
 

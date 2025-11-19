@@ -1,4 +1,4 @@
-#include "planetes42.dtsi"
+#include "thingnus_ball.dtsi"
 
 &default_transform {
   row-offset = <7>;
