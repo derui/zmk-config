@@ -79,20 +79,56 @@
   };
     
   behaviors {
+
+      alt_p: alt_positive {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp 0>, <&kp TAB>;
+        mods = <(MOD_LALT|MOD_RALT)>;
+        keep-mods = <(MOD_LALT)>;
+      };
+      alt_n: alt_negative {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp 0>, <&kp LS(TAB)>;
+        mods = <(MOD_LALT|MOD_RALT)>;
+        keep-mods = <(MOD_LALT)>;
+      };
+      arrow_n: arrow_negative {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp UP>, <&kp LEFT>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      arrow_p: arrow_positive {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp DOWN>, <&kp RIGHT>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
       
-      rot_kp: sensor_rotate_kp {
-          compatible = "zmk,behavior-sensor-rotate-var";
-          #sensor-binding-cells = <2>;
-          bindings = <&kp>, <&kp>;
+      rot_n: rot_n {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&arrow_n>, <&alt_n>;
+        mods = <(MOD_LALT|MOD_RALT)>;
       };
 
-      rot_msc: sensor_rotate_msc {
-          compatible = "zmk,behavior-sensor-rotate-var";
-          #sensor-binding-cells = <2>;
-          bindings = <&msc>, <&msc>;
-          tap-ms = <20>;
+      rot_p: rot_positive {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&arrow_p>, <&alt_p>;
+        mods = <(MOD_LALT|MOD_RALT)>;
       };
 
+      rot_base: rot_base {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&rot_n>, <&rot_p>;
+        tap-ms = <10>;
+      };
+      
       tog_on: toggle_layer_on_only {
           compatible = "zmk,behavior-toggle-layer";
           #binding-cells = <1>;
@@ -150,7 +186,7 @@
                                 &kp LALT     &none    &none                     &none    &none    &mt_hypr LGUI 0
       >;
 
-        sensor-bindings = <&rot_kp UP DOWN>;
+        sensor-bindings = <&rot_base>;
     };
     mac {
       bindings = <
@@ -160,7 +196,7 @@
                          &kp LGUI  &none    &none                     &none    &none    &kp LALT
       >;
 
-        sensor-bindings = <&rot_kp UP DOWN>;
+        sensor-bindings = <&rot_base>;
     };
 
     qwerty {
@@ -170,7 +206,7 @@
   &mt LSHFT ESC &kp Z &kp X &kp C     &kp V          &kp B                    &kp N           &kp M              &kp COMMA &kp DOT &kp FSLH &kp LALT
                             &trans    &lt_lang2 LOWR 0 &kp SPACE                &mt LSHFT ENTER &lt_lang1 RAIS 0 &trans
       >;
-      sensor-bindings = <&rot_kp UP DOWN>;
+      sensor-bindings = <&rot_base>;
     };
 
     gallium {
@@ -181,7 +217,7 @@
                             &trans  &lt_lang2 LOWR 0 &kp SPACE                &mt LSHFT ENTER &lt_lang1 RAIS 0  &trans
       >;
 
-          sensor-bindings = <&rot_kp UP DOWN>;
+      sensor-bindings = <&rot_base>;
     };
 
     japanese {
@@ -191,7 +227,7 @@
   &mt LSHFT ESC &jp Z X &jp X Q &jp C M   &jp V W          &jp B Z                  &jp N K         &jp M P          &jp COMMA SQT &jp DOT SEMI &jp FSLH DOT &kp LALT
                                 &trans    &lt_lang2 LOWR 0 &jp SPACE SPACE          &jp ENTER ENTER &lt_lang1 RAIS 0 &trans
       >;
-      sensor-bindings = <&rot_kp UP DOWN>;
+      sensor-bindings = <&rot_base>;
     };
 
     lower {
@@ -202,7 +238,7 @@
                                &trans   &trans   &trans           &trans   &trans   &trans
       >;
 
-          sensor-bindings = <&rot_kp UP DOWN>;
+      sensor-bindings = <&rot_base>;
     };
     raise {
       bindings = <
@@ -212,7 +248,7 @@
                                  &trans &trans     &trans         &trans     &trans    &trans
       >;
 
-          sensor-bindings = <&rot_kp PG_UP PG_DN>;
+      sensor-bindings = <&rot_base>;
     };
 
     adjust {
@@ -229,10 +265,10 @@
   &none     &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
   &kp LCTL  &mkp MCLK &none    &mkp RCLK &mkp LCLK &none                     &none    &mkp LCLK &mkp RCLK &none   &mkp MCLK &none
   &kp LSFT  &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
-                               &none     &none     &none                     &none    &none     &none
+                               &none     &trans    &none                     &none    &none     &none
       >;
 
-        sensor-bindings = <&rot_msc SCRL_UP SCRL_DOWN>;
+      sensor-bindings = <&rot_base>;
     };
 
     hypr {
@@ -243,7 +279,7 @@
                                             &none         &none          &sk LSHIFT          &hypr_off ENTER &none           &none
       >;
 
-          sensor-bindings = <&rot_kp PG_UP PG_DN>;
+      sensor-bindings = <&rot_base>;
     };
 
   };

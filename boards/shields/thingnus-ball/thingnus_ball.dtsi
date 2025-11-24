@@ -70,7 +70,10 @@
             19 // K
             21 // ;
             12 // Ctrl
+            23 // LShift
         >;
+        // do not enabde tepm layer unless 200ms after key input
+        require-prior-idle-ms = <200>;
     };
 
     // comment in if you decided to use wireless split
