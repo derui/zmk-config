@@ -4,21 +4,26 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/pointing.h>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix-transform = &default_transform;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
     };
   
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
         rows = <14>;
-// | SW1 | SW4 | SW7 | SW10 | SW13 | SW16 |                 | SW22 | SW25 | SW29 | SW33 | SW36 | SW40 |
-// | SW2 | SW5 | SW8 | SW11 | SW14 | SW17 |                 | SW23 | SW27 | SW30 | SW34 | SW37 | SW41 |
-// | SW3 | SW6 | SW9 | SW12 | SW15 | SW18 |                 | SW24 | SW28 | SW31 | SW35 | SW38 | SW42 |
-//                   | SW19 | SW20 | SW21 |                 | SW43 | SW44 | SW45 |
+// | SW1 | SW4 | SW7 | SW10 | SW13 | SW16 |                 | SW22 | SW25 | SW28 | SW31 | SW34 | SW37 |
+// | SW2 | SW5 | SW8 | SW11 | SW14 | SW17 |                 | SW23 | SW26 | SW29 | SW32 | SW35 | SW38 |
+// | SW3 | SW6 | SW9 | SW12 | SW15 | SW18 |                 | SW24 | SW27 | SW30 | SW33 | SW36 | SW39 |
+//                   | SW19 | SW20 | SW21 |                 | SW41 | SW42 | SW43 |
         map = <
           RC(0,1) RC(1,0) RC(2,0) RC(3,0) RC(4,0) RC(5,0)    RC(12,0) RC(11,0) RC(10,0) RC( 9,0) RC( 8,0) RC(7,1)
           RC(0,2) RC(1,2) RC(2,1) RC(3,1) RC(4,1) RC(5,1)    RC(12,1) RC(11,1) RC(10,1) RC( 9,1) RC( 8,2) RC(7,2)
@@ -66,27 +71,68 @@
             16 // F
             15 // D
             13 // A
-            18 // J
-            19 // K
-            21 // ;
-            12 // Ctrl
-            23 // LShift
+            12 // LCtrl
+            24 // LShift
+            35 // scroll toggle
+            36 // Alt/Cmd
         >;
-        // do not enabde tepm layer unless 200ms after key input
+        // do not enable tepm layer unless 200ms after key input
         require-prior-idle-ms = <200>;
     };
-
-    // comment in if you decided to use wireless split
-    //wired_split {
-    //    compatible = "zmk,wired-split";
-    //    device = <&xiao_serial>;
-    //};
 };
 
-// comment in this node if use wireless spilt
-//&xiao_serial {
-//  status = "okay";
-//};
+&physical_layout0 {
+    kscan = <&kscan0>;
+    transform = <&default_transform>;
+
+    keys    //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 50  50   0    0       0     0     0>
+            , <&key_physical_attrs 50  50  50    0       0     0     0>
+            , <&key_physical_attrs 50  50 100    0       0     0     0>
+            , <&key_physical_attrs 50  50 150    0       0     0     0>
+            , <&key_physical_attrs 50  50 200    0       0     0     0>
+            , <&key_physical_attrs 50  50 250    0       0     0     0>
+            , <&key_physical_attrs 50  50 350    0       0     0     0>
+            , <&key_physical_attrs 50  50 400    0       0     0     0>
+            , <&key_physical_attrs 50  50 450    0       0     0     0>
+            , <&key_physical_attrs 50  50 500    0       0     0     0>
+            , <&key_physical_attrs 50  50 550    0       0     0     0>
+            , <&key_physical_attrs 50  50 600    0       0     0     0>
+            // row 2
+            , <&key_physical_attrs 50  50   0   50       0     0     0>
+            , <&key_physical_attrs 50  50  50   50       0     0     0>
+            , <&key_physical_attrs 50  50 100   50       0     0     0>
+            , <&key_physical_attrs 50  50 150   50       0     0     0>
+            , <&key_physical_attrs 50  50 200   50       0     0     0>
+            , <&key_physical_attrs 50  50 250   50       0     0     0>
+            , <&key_physical_attrs 50  50 350   50       0     0     0>
+            , <&key_physical_attrs 50  50 400   50       0     0     0>
+            , <&key_physical_attrs 50  50 450   50       0     0     0>
+            , <&key_physical_attrs 50  50 500   50       0     0     0>
+            , <&key_physical_attrs 50  50 550   50       0     0     0>
+            , <&key_physical_attrs 50  50 600   50       0     0     0>
+            // row 3
+            , <&key_physical_attrs 50  50   0  100       0     0     0>
+            , <&key_physical_attrs 50  50  50  100       0     0     0>
+            , <&key_physical_attrs 50  50 100  100       0     0     0>
+            , <&key_physical_attrs 50  50 150  100       0     0     0>
+            , <&key_physical_attrs 50  50 200  100       0     0     0>
+            , <&key_physical_attrs 50  50 250  100       0     0     0>
+            , <&key_physical_attrs 50  50 350  100       0     0     0>
+            , <&key_physical_attrs 50  50 400  100       0     0     0>
+            , <&key_physical_attrs 50  50 450  100       0     0     0>
+            , <&key_physical_attrs 50  50 500  100       0     0     0>
+            , <&key_physical_attrs 50  50 550  100       0     0     0>
+            , <&key_physical_attrs 50  50 600  100       0     0     0>
+            // row 4
+            , <&key_physical_attrs 50  50 150  150       0     0     0>
+            , <&key_physical_attrs 50  50 200  150       0     0     0>
+            , <&key_physical_attrs 50  50 250  150       0     0     0>
+            , <&key_physical_attrs 50  50 350  150       0     0     0>
+            , <&key_physical_attrs 50  50 400  150       0     0     0>
+            , <&key_physical_attrs 50  50 450  150       0     0     0>
+            ;
+};
 
 // enable extra gpios
 &uicr {

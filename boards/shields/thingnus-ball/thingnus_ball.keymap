@@ -19,15 +19,12 @@
 #define LOWR 5
 #define RAIS 6
 #define ADJT 7
-#define HYPR 9
+#define HYPR 10
 #define MOUSE 8
+#define MOUSE_SCL 9
 
 // restore layer click mkp key after 250ms
 &mkp_input_listener {
-  input-processors = <&zip_temp_layer MOUSE 250>;
-};
-
-&msc_input_listener {
   input-processors = <&zip_temp_layer MOUSE 250>;
 };
 
@@ -126,6 +123,14 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&rot_n>, <&rot_p>;
+        tap-ms = <10>;
+      };
+
+      // scrolling with encoder
+      mouse_scrl: mouse_wheel_scrl {
+        compatible = "zmk,behavior-sensor-rotate-var";
+        #sensor-binding-cells = <2>;
+        bindings = <&msc>, <&msc>;
         tap-ms = <10>;
       };
       
@@ -263,12 +268,23 @@
     mouse {
       bindings = <
   &none     &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
-  &kp LCTL  &mkp MCLK &none    &mkp RCLK &mkp LCLK &none                     &none    &mkp LCLK &mkp RCLK &none   &mkp MCLK &none
-  &kp LSFT  &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
-                               &none     &trans    &none                     &none    &none     &none
+  &kp LCTL  &mkp MCLK &none    &mkp RCLK &mkp LCLK &none                     &none    &none     &none     &none   &none     &none
+  &kp LSFT  &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &tog_on MOUSE_SCL
+                               &trans    &none     &none                     &none    &none     &none
       >;
 
-      sensor-bindings = <&rot_base>;
+      sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
+    };
+
+    mouse_scroll {
+      bindings = <
+  &none     &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
+  &kp LCTL  &mkp MCLK &none    &mkp RCLK &mkp LCLK &none                     &none    &none     &none     &none   &none     &none
+  &kp LSFT  &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &tog_off MOUSE_SCL
+                               &trans    &none     &none                     &none    &none     &none
+      >;
+
+      sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
     };
 
     hypr {

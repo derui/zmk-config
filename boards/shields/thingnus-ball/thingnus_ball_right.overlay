@@ -10,13 +10,13 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_temp_layer 8 10000>;
-        
+
+        // scroll-enabled layer
         scroller {
-            layers = <5>;
+            layers = <9>;
             input-processors =
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_scaler 1 40>;
-            process-next;
         };
 
         mouse_layer {
