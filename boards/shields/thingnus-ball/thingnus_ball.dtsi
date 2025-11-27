@@ -9,6 +9,16 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
+        zmk,battery = &vbatt;
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        io-channels = <&adc 4>;
+        power-gpios = <&xiao_d 2 (GPIO_OPEN_DRAIN | GPIO_ACTIVE_LOW)>;
+        output-ohms = <510000>;
+        full-ohms = <(1000000 + 510000)>;
     };
 
     physical_layout0: physical_layout_0 {

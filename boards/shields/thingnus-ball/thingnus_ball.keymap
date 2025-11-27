@@ -192,7 +192,7 @@
                                 &kp LALT     &none    &none                     &none    &none    &mt_hypr LGUI 0
       >;
 
-        sensor-bindings = <&rot_base>;
+       sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
     };
     mac {
       bindings = <
