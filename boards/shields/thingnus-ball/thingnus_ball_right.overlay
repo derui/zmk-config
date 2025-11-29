@@ -11,14 +11,6 @@
         device = <&trackball>;
         input-processors = <&zip_temp_layer 8 10000>;
 
-        // scroll-enabled layer
-        scroller {
-            layers = <9>;
-            input-processors =
-                <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_scaler 1 40>;
-        };
-
         mouse_layer {
           layers = <8>;
 

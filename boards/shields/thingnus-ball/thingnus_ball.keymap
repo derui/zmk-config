@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/japanese_input.dtsi>
-
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 140
 
 #define MAC 1
 #define QWER 2
@@ -20,17 +20,16 @@
 #define LOWR 5
 #define RAIS 6
 #define ADJT 7
-#define HYPR 10
+#define HYPR 9
 #define MOUSE 8
-#define MOUSE_SCL 9
 
 // restore layer click mkp key after 250ms
 &mkp_input_listener {
   input-processors = <&zip_temp_layer MOUSE 250>;
 };
 
-&mmv {
-  time-to-max-speed-ms = <300>;             /* <--- How long time until max speed is reached (default: 500) */
+&msc_input_listener {
+  input-processors = <&zip_temp_layer MOUSE 10000>;
 };
 
 &lt {
@@ -77,21 +76,23 @@
   };
     
   behaviors {
-
-      alt_p: alt_positive {
+      // for application-toggle
+      gui_p: gui_positive {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp 0>, <&kp TAB>;
-        mods = <(MOD_LALT|MOD_RALT)>;
-        keep-mods = <(MOD_LALT)>;
+        mods = <(MOD_LGUI|MOD_RGUI)>;
+        keep-mods = <(MOD_LGUI)>;
       };
-      alt_n: alt_negative {
+      gui_n: gui_negative {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp 0>, <&kp LS(TAB)>;
-        mods = <(MOD_LALT|MOD_RALT)>;
-        keep-mods = <(MOD_LALT)>;
+        mods = <(MOD_LGUI|MOD_RGUI)>;
+        keep-mods = <(MOD_LGUI)>;
       };
+
+      // left and right move
       arrow_n: arrow_negative {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
@@ -105,34 +106,36 @@
         bindings = <&kp DOWN>, <&kp RIGHT>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
       };
-      
+
+      // negative rotation
       rot_n: rot_n {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
-        bindings = <&arrow_n>, <&alt_n>;
-        mods = <(MOD_LALT|MOD_RALT)>;
+        bindings = <&arrow_n>, <&gui_n>;
+        mods = <(MOD_LGUI|MOD_RGUI)>;
       };
 
+      // positive rotation
       rot_p: rot_positive {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
-        bindings = <&arrow_p>, <&alt_p>;
-        mods = <(MOD_LALT|MOD_RALT)>;
+        bindings = <&arrow_p>, <&gui_p>;
+        mods = <(MOD_LGUI|MOD_RGUI)>;
       };
 
       rot_base: rot_base {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&rot_n>, <&rot_p>;
-        tap-ms = <10>;
+        tap-ms = <20>;
       };
 
       // scrolling with encoder
       mouse_scrl: mouse_wheel_scrl {
-        compatible = "zmk,behavior-sensor-rotate-var";
-        #sensor-binding-cells = <2>;
-        bindings = <&msc>, <&msc>;
-        tap-ms = <10>;
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        tap-ms = <20>;
       };
       
       tog_on: toggle_layer_on_only {
@@ -192,7 +195,6 @@
                                 &kp LALT     &none    &none                     &none    &none    &mt_hypr LGUI 0
       >;
 
-       sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
     };
     mac {
       bindings = <
@@ -202,7 +204,6 @@
                          &kp LGUI  &none    &none                     &none    &none    &kp LALT
       >;
 
-        sensor-bindings = <&rot_base>;
     };
 
     qwerty {
@@ -268,24 +269,13 @@
 
     mouse {
       bindings = <
-  &kp ESC   &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
-  &kp LCTL  &mkp MCLK &none    &mkp RCLK &mkp LCLK &none                     &none    &none     &none     &none   &none     &none
-  &kp LSFT  &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &tog_on MOUSE_SCL
-                               &trans    &none     &none                     &none    &none     &none
+  &kp ESC   &none     &none     &none     &none     &none                     &none    &none     &none     &none   &none     &none
+  &kp LCTL  &mkp MCLK &none     &mkp RCLK &mkp LCLK &none                     &none    &none     &none     &none   &none     &none
+  &kp LSFT  &none     &kp LC(X) &kp LC(C) &kp LC(V) &none                     &none    &none     &none     &none   &none     &kp LALT
+                                &trans    &none     &none                     &none    &none     &none
       >;
 
-      sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
-    };
-
-    mouse_scroll {
-      bindings = <
-  &kp ESC   &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &none
-  &kp LCTL  &mkp MCLK &none    &mkp RCLK &mkp LCLK &none                     &none    &none     &none     &none   &none     &none
-  &kp LSFT  &none     &none    &none     &none     &none                     &none    &none     &none     &none   &none     &tog_off MOUSE_SCL
-                               &trans    &none     &none                     &none    &none     &none
-      >;
-
-      sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
+      sensor-bindings = <&mouse_scrl>;
     };
 
     hypr {
