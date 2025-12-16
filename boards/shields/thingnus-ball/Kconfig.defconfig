@@ -14,7 +14,7 @@ config INPUT
     bool
     default y
 
-config PMW3610
+config PMW3610_ALT
     bool
     default y
 
