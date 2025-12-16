@@ -22,6 +22,7 @@
 #define ADJT 7
 #define HYPR 9
 #define MOUSE 8
+#define HYPR_MAC 10
 
 // restore layer click mkp key after 250ms
 &mkp_input_listener {
@@ -53,6 +54,24 @@
         bindings
               = <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>
               , <&macro_tap &tog_off HYPR>
+              ;
+      };
+
+      hypr_mac_on: hyprland_mac_on {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &tog_on HYPR_MAC>
+              , <&macro_tap &sk LALT>
+              ;
+      };
+
+      hypr_mac_off: hyprland_mac_off {
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        bindings
+              = <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>
+              , <&macro_tap &tog_off HYPR_MAC>
               ;
       };
 
@@ -163,6 +182,17 @@
             quick-tap-ms = <200>;
       };
 
+      mt_hypr_mac: mt_hypr_mac {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "MT for HYPR on macOS";
+            bindings = <&kp>, <&hypr_mac_on>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <200>;
+      };
+
       lt_lang2: lt_lang2 {
             compatible = "zmk,behavior-hold-tap";
             display-name = "LT for LANG2";
@@ -201,7 +231,7 @@
   &none   &none    &none &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none   &none    &none &none     &none    &none                     &none    &none    &none     &none   &none    &none
   &none   &none    &none &none     &none    &none                     &none    &none    &none     &none   &none    &none
-                         &kp LGUI  &none    &none                     &none    &none    &kp LALT
+                         &kp LGUI  &none    &none                     &none    &none    &mt_hypr_mac LALT 0
       >;
 
     };
@@ -284,6 +314,17 @@
   &sk LCTRL     &hypr_off A    &hypr_off S  &hypr_off D   &hypr_off F    &hypr_off G         &hypr_off H     &hypr_off J     &hypr_off K  &hypr_off L   &hypr_off SEMI &none
   &none         &hypr_off Z    &hypr_off X  &hypr_off C   &hypr_off V    &hypr_off B         &hypr_off N     &hypr_off M     &none        &none         &none          &none
                                             &none         &none          &sk LSHIFT          &hypr_off ENTER &none           &none
+      >;
+
+      sensor-bindings = <&rot_base>;
+    };
+
+    hypr_mac {
+      bindings = <
+  &hypr_mac_off ESC &hypr_mac_off N1   &hypr_mac_off N2 &hypr_mac_off N3  &hypr_mac_off N4   &hypr_mac_off N5        &hypr_mac_off N6    &hypr_mac_off N7    &hypr_mac_off N8 &hypr_mac_off N9  &hypr_mac_off N0   &none
+  &sk LCTRL         &hypr_mac_off A    &hypr_mac_off S  &hypr_mac_off D   &hypr_mac_off F    &hypr_mac_off G         &hypr_mac_off H     &hypr_mac_off J     &hypr_mac_off K  &hypr_mac_off L   &hypr_mac_off SEMI &none
+  &none             &hypr_mac_off Z    &hypr_mac_off X  &hypr_mac_off C   &hypr_mac_off V    &hypr_mac_off B         &hypr_mac_off N     &hypr_mac_off M     &none        &none         &none          &none
+                                                        &none             &none              &sk LSHIFT              &hypr_mac_off ENTER &none           &none
       >;
 
       sensor-bindings = <&rot_base>;
